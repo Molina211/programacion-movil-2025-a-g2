@@ -1,7 +1,7 @@
 # Guía Básica de Git
 
 ## Configuración Inicial
-Antes de empezar, asegúrate de configurar tu usuario en Git:
+Al empezar, asegúrate de configurar tu usuario en Git:
 
 ```sh
 #  Configurar el usuario y correo
@@ -11,7 +11,7 @@ git config --global user.email "tuemail@example.com"
 
 ---
 
-## Inicializar un Repositorio
+## Iniciar un Repositorio
 
 ```sh
 #  Crear un nuevo repositorio local
@@ -21,7 +21,7 @@ git init
 ---
 
 ## Clonar un Repositorio
-Si quieres trabajar en un proyecto existente:
+Para trabajar en un proyecto existente:
 
 ```sh
 #  Clonar un repositorio
