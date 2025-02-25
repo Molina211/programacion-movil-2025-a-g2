@@ -78,6 +78,15 @@ Trello permite hacer seguimiento sobre las tareas del proyecto.
 
 ---
 
+## **Daily Meeting**
+### **UH Study Spaces**
+📅 **Fecha:** Lunes, 24 de febrero  
+🕓 **Hora:** 4:00 – 4:20 PM (Zona horaria: America/Bogotá)  
+🔗 **Enlace de la videollamada:** [Google Meet](https://meet.google.com/zbh-jayt-sgz)  
+📞 **O marca el:** +1 609-831-2398 PIN: 796 632 415#  
+
+---
+
 ## **Ejercicio en clase**
 ### **Identificador:** 01-HU
 **Ejemplo:** Entendimiento del negocio para la gestión de ventas de un carrito.
