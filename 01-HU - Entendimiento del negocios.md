@@ -298,4 +298,3 @@ Todos los casos de uso relevantes almacenan información en la Base de Datos, co
 - Registro de reservas.
 - Historial de reservas.
 - Información de las bibliotecas.
-
