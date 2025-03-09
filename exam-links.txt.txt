@@ -1,0 +1,5 @@
+- 🔗 Enlace público de Trello con las tres HU documentadas: https://trello.com/invite/b/67c6fd2a073bb78b5a3e994f/ATTIa843457c85aab7882d4a6cbc30d04e31EE259CB2/taller-final-corte-1
+
+- 🔗 Enlace público de Figma con el diseño de HU3: https://www.figma.com/design/rGmsxhXzRoYOeZk6euxk1O/Taller---App-de-gesti%C3%B3n-de-vuelos?node-id=0-1&t=AVT4TJ7cQpxGHJWl-1
+
+- 🔗 Enlace del repositorio en Git: https://github.com/Molina211/programacion-movil-2025-a-g2
