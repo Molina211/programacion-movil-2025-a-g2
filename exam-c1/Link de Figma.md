@@ -1,0 +1,1 @@
+https://www.figma.com/design/rGmsxhXzRoYOeZk6euxk1O/Segunda-Parte-Parcial?node-id=0-1&t=3b5HzSsr8t4m40vv-1dasd
