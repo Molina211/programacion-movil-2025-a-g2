@@ -1,4 +1,4 @@
-**Creación de Esquemas y Prototipos**  
+# **Creación de Esquemas y Prototipos**  
 
 En este módulo, comprendí cómo la creación de **estructuras visuales** influye en la experiencia del usuario y facilita la navegación dentro de un producto digital.  
 
