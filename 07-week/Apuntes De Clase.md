@@ -13,7 +13,7 @@
 
 ## Convención de Ramas
 
-### Personal:
+### Personal: 
 
 - ❌ `qa` (No usar)
 - `main` (Vacío)
