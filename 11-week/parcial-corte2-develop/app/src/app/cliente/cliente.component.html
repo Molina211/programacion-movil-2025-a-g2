@@ -1,0 +1,40 @@
+<div class="contenedor-seccion">
+  <h2 class="titulo-seccion">Datos del Cliente</h2>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre completo</ion-label>
+
+    <ion-input [(ngModel)]="nombre" placeholder="Juan Pérez"></ion-input>
+  
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Teléfono</ion-label>
+
+    <ion-input [(ngModel)]="telefono" type="tel" placeholder="1234567890"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Correo electrónico</ion-label>
+    
+    <ion-input [(ngModel)]="correo" type="email" placeholder="correo@ejemplo.com"></ion-input>
+  </ion-item>
+
+  <!-- Botón para guardar los datos -->
+  <ion-button expand="full" (click)="emitirDatos()">Guardar Datos</ion-button>
+
+  <!-- Mostrar los clientes guardados -->
+  <div *ngIf="clientes.length > 0">
+    <h3>Clientes Guardados</h3>
+    <ion-list>
+      <ion-item *ngFor="let cliente of clientes">
+        <ion-label>
+          <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
+          <p><strong>Teléfono:</strong> {{ cliente.telefono }}</p>
+          <p><strong>Correo:</strong> {{ cliente.correo }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>

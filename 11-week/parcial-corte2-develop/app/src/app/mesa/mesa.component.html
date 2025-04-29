@@ -1,0 +1,28 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Seleccionar Mesa</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="mesaSeleccionada">
+        <ion-item *ngFor="let mesa of mesas">
+          <ion-label>Mesa {{ mesa.numero }} ({{ mesa.capacidad }} personas)</ion-label>
+          <ion-radio slot="start" [value]="mesa"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button expand="block" (click)="confirmarSeleccion()" [disabled]="!mesaSeleccionada">
+      Confirmar Mesa
+    </ion-button>
+
+    <div *ngIf="mesaConfirmada" class="mesa-confirmada">
+      <ion-text color="success">
+        <h3>Mesa Confirmada:</h3>
+        <p>Número: {{ mesaConfirmada.numero }}</p>
+        <p>Capacidad: {{ mesaConfirmada.capacidad }} personas</p>
+      </ion-text>
+    </div>
+  </ion-card-content>
+</ion-card>

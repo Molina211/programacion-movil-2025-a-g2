@@ -1,0 +1,21 @@
+<div class="contenedor-seccion">
+  <h2 class="titulo-seccion">Selecciona fecha y hora</h2>
+
+  <ion-item>
+    <ion-label position="stacked">Fecha</ion-label>
+    <ion-datetime presentation="date" [(ngModel)]="fecha"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Hora</ion-label>
+    <ion-datetime presentation="time" [(ngModel)]="hora"></ion-datetime>
+  </ion-item>
+
+  <!-- Botón para confirmar la selección -->
+  <ion-button expand="block" (click)="emitirCambio()">Confirmar selección</ion-button>
+
+  <div *ngIf="fechaHora">
+    <h3>Fecha y Hora seleccionadas:</h3>
+    <p>{{ fechaHora }}</p>
+  </div>
+</div>
