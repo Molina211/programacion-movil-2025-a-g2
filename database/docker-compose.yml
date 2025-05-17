@@ -21,8 +21,4 @@ volumes:
 
 networks:
   dbnet:
-<<<<<<< HEAD
     driver: bridge
-=======
-    driver: bridge
->>>>>>> feature/HU-04
