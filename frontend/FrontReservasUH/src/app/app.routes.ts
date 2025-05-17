@@ -18,11 +18,8 @@ export const routes: Routes = [
     path: 'iniciar-sesion',
     loadComponent: () => import('./iniciar-sesion/iniciar-sesion.page').then( m => m.IniciarSesionPage)
   },
-<<<<<<< HEAD
-=======
   {
     path: 'verificar-correo',
     loadComponent: () => import('./verificar-correo/verificar-correo.page').then( m => m.VerificarCorreoPage)
   },
->>>>>>> feature/HU-04
 ];
