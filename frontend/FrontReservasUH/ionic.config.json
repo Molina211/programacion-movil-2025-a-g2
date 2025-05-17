@@ -1,7 +1,0 @@
-{
-  "name": "FrontReservasUH",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
