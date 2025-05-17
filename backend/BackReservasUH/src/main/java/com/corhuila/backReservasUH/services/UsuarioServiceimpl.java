@@ -1,9 +1,21 @@
 package com.corhuila.backReservasUH.services;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+>>>>>>> feature/HU-04
 import org.springframework.transaction.annotation.Transactional;
 
 import com.corhuila.backReservasUH.models.Usuario;
@@ -19,6 +31,14 @@ public class UsuarioServiceimpl implements IUsuarioService {
     @Autowired
     private IUsuarioRepository usuarioRepository;
 
+<<<<<<< HEAD
+=======
+    @Autowired
+    private JavaMailSender mailSender;
+
+    private final Map<String, String> codigosPorCorreo = new HashMap<>();
+
+>>>>>>> feature/HU-04
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Override
@@ -59,9 +79,59 @@ public class UsuarioServiceimpl implements IUsuarioService {
     }
 
     @Override
+<<<<<<< HEAD
+=======
+    public String enviarCodigoVerificacion(String correo) {
+        // Solo verificar que el usuario exista, sin guardar variable
+        usuarioRepository.findByCorreo(correo)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        // Generar nuevo código
+        String nuevoCodigo = generarCodigo();
+
+        // Guardar el código en el mapa (correo -> código)
+        codigosPorCorreo.put(correo, nuevoCodigo);
+
+        // Crear el mensaje de correo
+        SimpleMailMessage mensaje = new SimpleMailMessage();
+        mensaje.setTo(correo);
+        mensaje.setSubject("Código de verificación de cuenta");
+        mensaje.setText("Tu nuevo código de verificación es: " + nuevoCodigo);
+
+        // Enviar el correo
+        mailSender.send(mensaje);
+
+        return nuevoCodigo;
+    }
+
+    @Override
+    public boolean verificarCodigo(String correo, String codigoIngresado) {
+        String codigoGuardado = codigosPorCorreo.get(correo);
+        if (codigoGuardado != null && codigoGuardado.equalsIgnoreCase(codigoIngresado)) {
+            codigosPorCorreo.remove(correo); // opcional: eliminar una vez validado
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+>>>>>>> feature/HU-04
     @Transactional
     public void delete(Long id) {
         usuarioRepository.deleteById(id);
     }
 
+<<<<<<< HEAD
+=======
+    private String generarCodigo() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder codigo = new StringBuilder();
+        Random rand = new Random();
+        for (int i = 0; i < 6; i++) {
+            codigo.append(caracteres.charAt(rand.nextInt(caracteres.length())));
+        }
+        return codigo.toString();
+    }
+
+>>>>>>> feature/HU-04
 }

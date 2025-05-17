@@ -1,0 +1,94 @@
+.content {
+  position: relative;
+  z-index: 2;
+  margin-top: 220px;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 10px 30px;
+  text-align: center; /* ✅ Centra el texto */
+}
+
+.content h2 {
+  margin-bottom: 35px;
+  font-size: 26px;
+  color: #000;
+  font-weight: 400;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.content p {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.code-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.code-inputs input {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  font-size: 22px;
+  border: 2px solid #009344;
+  border-radius: 8px;
+  outline: none;
+  color: #000;
+  background-color: white; /* ✅ Fondo blanco */
+  padding: 5px;             /* ✅ Más espacio interno */
+}
+
+.btn {
+  display: block;
+  width: 160px;
+  margin: 12px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 60%;              /* Ocupa todo el ancho disponible del contenedor padre */
+  max-width: 300px;         /* Controla el ancho máximo de los botones */
+  margin: 20px auto 0 auto; /* Centra horizontalmente */
+  align-items: stretch;     /* Hace que los botones ocupen el 100% del ancho del contenedor */
+}
+
+/* Botón personalizado primario */
+ion-button.btn-primary {
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+}
+
+/* Botón personalizado secundario */
+ion-button.btn-secondary {
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+  --border-color: #000000;
+}
+
+ion-button.btn-primary,
+ion-button.btn-secondary {
+  width: 100%;              /* ✅ Ocuparán todo el ancho del contenedor */
+}

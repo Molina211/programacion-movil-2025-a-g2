@@ -15,9 +15,15 @@ import { LoginService } from 'src/app/service/login.service';
 export class InicioSesionFormComponent  implements OnInit {
 
   usuario1 = {
+<<<<<<< HEAD
   correo: '',
   contrasena: ''
 };
+=======
+    correo: '',
+    contrasena: ''
+  };
+>>>>>>> feature/HU-04
 
   Rol: string | null = null;
 
@@ -38,7 +44,14 @@ export class InicioSesionFormComponent  implements OnInit {
       // Éxito: guardar datos en localStorage y redirigir
       localStorage.setItem('Rol', response.rol);
       localStorage.setItem('Id', response.id);
+<<<<<<< HEAD
       this.router.navigate(['/interfaz-principal']);
+=======
+      this.enviarCodigo();
+      this.router.navigate(['/verificar-correo'], {
+      state: { correo: this.usuario1.correo }
+      });
+>>>>>>> feature/HU-04
     },
     error => {
       // Error por código de estado
@@ -55,7 +68,20 @@ export class InicioSesionFormComponent  implements OnInit {
 
       // Limpiar el formulario solo si falló
       this.usuario1 = { correo: '', contrasena: '' };
+<<<<<<< HEAD
     }
   );
 }
+=======
+     }
+    );
+  }
+
+  enviarCodigo() {
+    this.loginService.sendEmail('send-code',this.usuario1.correo).subscribe({
+      next: res => console.log('Código enviado', res),
+      error: err => console.error('Error al enviar código', err)
+    });
+  }
+>>>>>>> feature/HU-04
 }

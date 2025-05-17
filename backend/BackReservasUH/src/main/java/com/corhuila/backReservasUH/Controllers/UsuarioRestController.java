@@ -1,6 +1,12 @@
 package com.corhuila.backReservasUH.Controllers;
 
+<<<<<<< HEAD
 import java.util.List;
+=======
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+>>>>>>> feature/HU-04
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,4 +105,42 @@ public class UsuarioRestController {
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Contraseña incorrecta"));
     }
 
+<<<<<<< HEAD
+=======
+    @PostMapping("/send-code")
+    public ResponseEntity<Map<String, String>> sendCode(@RequestBody Map<String, String> body) {
+        String correo = body.get("correo");
+        try {
+            usuarioService.enviarCodigoVerificacion(correo);
+
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Código enviado correctamente a " + correo);
+
+            return ResponseEntity.ok(response);
+        } catch (RuntimeException e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        }
+    }
+
+    @PostMapping("/verify-code")
+    public ResponseEntity<Map<String, String>> verifyCode(@RequestBody Map<String, String> body) {
+        String correo = body.get("correo");
+        String codigo = body.get("codigo");
+
+        boolean valido = usuarioService.verificarCodigo(correo, codigo);
+
+        Map<String, String> response = new HashMap<>();
+
+        if (valido) {
+            response.put("mensaje", "Código verificado correctamente.");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("error", "Código inválido.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+        }
+    }
+
+>>>>>>> feature/HU-04
 }

@@ -1,0 +1,32 @@
+<div class="content">
+  <h2>Activa tu cuenta</h2>
+  <p>
+    Te hemos enviado un correo electrónico a <br />
+    <strong>{{correo}}</strong> con el código de activación.
+  </p>
+
+  <p>Ingresa el código de activación de 6 dígitos</p>
+  <div class="code-inputs">
+  <input
+    *ngFor="let i of inputs; let idx = index"
+    type="text"
+    maxlength="1"
+    #codeInput
+    class="code-input"
+  />
+</div>
+
+  <div class="buttons-container">
+  <ion-button routerDirection="forward" (click)="verificarCodigo()" class="btn-primary">
+    Activar
+  </ion-button>
+  <ion-button 
+    class="btn-secondary" 
+    (click)="enviarCodigo()" 
+    fill="outline" 
+    [disabled]="!puedeEnviarCodigo">
+    Reenviar Código
+  </ion-button>
+</div>
+
+</div>
