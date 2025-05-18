@@ -37,12 +37,18 @@ export class RegistroFormComponent {
 
   Rol: string | null = null;
 
+  Id: number | null = null;
+
   ngOnInit(): void {
-    const storedRol = localStorage.getItem('Rol');
-    if (storedRol) {
-      this.Rol = storedRol; // Aquí se asigna directamente sin parsear
-    }
+  const storedRol = localStorage.getItem('Rol');
+  if (storedRol) {
+    this.Rol = storedRol;
   }
+  const storedId = localStorage.getItem('Id');
+  if (storedId) {
+    this.Id = Number(storedId); // Es tipo number
+  }
+}
   
   constructor(
     private usuarioService: UsuarioService,

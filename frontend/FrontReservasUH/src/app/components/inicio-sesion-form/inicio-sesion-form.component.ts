@@ -19,18 +19,15 @@ export class InicioSesionFormComponent  implements OnInit {
     contrasena: ''
   };
 
-  Rol: string | null = null;
-
   mensajeError: string = ''; // Mensaje de error para mostrar en el frontend
 
   constructor(private loginService: LoginService, private router: Router) {}
 
-  ngOnInit(): void {
-    const storedRol = localStorage.getItem('Rol');  
-      if (storedRol) {
-        this.Rol = storedRol; // Aquí se asigna directamente sin parsear
-      }
-  }
+  Rol: string | null = null;
+
+  Id: number | null = null;
+
+  ngOnInit(): void {}
 
   ingresar(): void {
   this.loginService.login('login', this.usuario1).subscribe(

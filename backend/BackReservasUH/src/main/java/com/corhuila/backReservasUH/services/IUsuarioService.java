@@ -3,11 +3,6 @@ package com.corhuila.backReservasUH.services;
 import java.util.List;
 import java.util.Optional;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> feature/HU-04
 import com.corhuila.backReservasUH.models.Usuario;
 
 public interface IUsuarioService {
@@ -20,12 +15,7 @@ public interface IUsuarioService {
 
     void delete(Long id);
 
-<<<<<<< HEAD
     Optional<Usuario> login(String email, String password);
-
-    Usuario findByCorreo(String correo);
-=======
-    Optional<Usuario> login(String correo, String password);
 
     Usuario findByCorreo(String correo);
 
@@ -33,5 +23,4 @@ public interface IUsuarioService {
 
     boolean verificarCodigo(String correo, String codigo);
 
->>>>>>> feature/HU-04
 }
