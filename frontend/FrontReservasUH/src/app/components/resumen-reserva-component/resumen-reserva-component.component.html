@@ -1,0 +1,14 @@
+<div class="resumen-container">
+  <div class="resumen-datos"><div><span class="label">Estudiante:</span> <span class="valor estudiante">{{ estudianteNombre }}</span></div>
+    <div><span class="label">Sede:</span> <span class="valor">{{ sede }}</span></div>
+    <div><span class="label">Motivo:</span> <span class="valor">{{ motivo }}</span></div>
+    <div><span class="label">Fecha:</span> <span class="valor">{{ fecha }}</span></div>
+    <div><span class="label">Sala :</span> <span class="valor">{{ sala }}</span></div>
+    <div><span class="label">Hora de entrada :</span> <span class="valor">{{ horaEntrada }}</span></div>
+    <div><span class="label">Hora de salida:</span> <span class="valor">{{ horaSalida }}</span></div>
+  </div>
+  <div class="resumen-botones">
+    <ion-button class="btn-resumen confirmar" expand="block" (click)="onConfirmarReserva()">Confirmar reservar</ion-button>
+    <ion-button class="btn-resumen cancelar" expand="block" (click)="onCancelarReserva()">Cancelar reserva</ion-button>
+  </div>
+</div>

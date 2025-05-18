@@ -1,0 +1,64 @@
+.reservas-container {
+  padding: 40px;
+  margin-top: 160px;
+  margin-bottom: 50px;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+}
+
+.titulo {
+font-family: 'League Spartan', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.subtitulo {
+    font-family: 'League Spartan', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.texto {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 4px 0;
+}
+
+.lista {
+    font-family: 'League Spartan', sans-serif;
+  margin: 10px 0 20px 20px;
+  padding-left: 0;
+  font-size: 15px;
+}
+
+.lista li {
+    font-family: 'League Spartan', sans-serif;
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+.boton-container {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 200px;
+  margin-left: 50px;
+  margin-bottom: 120px;
+}
+
+ion-button.reservar-btn {
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+}
