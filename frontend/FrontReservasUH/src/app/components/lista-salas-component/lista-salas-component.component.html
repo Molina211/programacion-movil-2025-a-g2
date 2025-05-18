@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="titulo">Salas disponibles</h2>
+
+    <div class="sala" *ngFor="let sala of salasList" (click)="onSalaClick(sala)">
+      <div class="sala-nombre">{{ sala.name }}</div>
+      <div class="sala-estado" [ngClass]="getEstadoClass(sala.estado)">
+        {{ sala.estado }}
+      </div>
+    </div>
+
+  </div>
