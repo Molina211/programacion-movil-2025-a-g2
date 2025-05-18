@@ -4,7 +4,7 @@
   align-items: center;
   padding: 16px;
   box-sizing: border-box;
-  margin-top: -20px; /* Corregido: se eliminó la unidad inválida */
+  margin-top: 120px; /* Corregido: se eliminó la unidad inválida */
 }
 
 .form-wrapper ion-label.ion-text-center h2 {
@@ -80,7 +80,7 @@ ion-item ion-label {
 
 .logo-image {
   margin: 1px 0;
-  margin-bottom: -70px;
+  margin-bottom: -90px;
 }
 
 .uh-logo {
@@ -135,7 +135,7 @@ ion-button.btn-ingresar {
   font-family: 'League Spartan', sans-serif;
   width: 100%;
   height: 32px;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px; /* separa del mensaje de error */
   transition: opacity 0.3s ease, transform 0.2s ease;
 }

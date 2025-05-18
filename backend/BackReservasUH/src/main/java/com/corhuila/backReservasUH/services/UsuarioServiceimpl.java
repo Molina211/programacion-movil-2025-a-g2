@@ -1,21 +1,15 @@
 package com.corhuila.backReservasUH.services;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-=======
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
->>>>>>> feature/HU-04
 import org.springframework.transaction.annotation.Transactional;
 
 import com.corhuila.backReservasUH.models.Usuario;
@@ -31,14 +25,11 @@ public class UsuarioServiceimpl implements IUsuarioService {
     @Autowired
     private IUsuarioRepository usuarioRepository;
 
-<<<<<<< HEAD
-=======
     @Autowired
     private JavaMailSender mailSender;
 
     private final Map<String, String> codigosPorCorreo = new HashMap<>();
 
->>>>>>> feature/HU-04
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Override
@@ -79,8 +70,6 @@ public class UsuarioServiceimpl implements IUsuarioService {
     }
 
     @Override
-<<<<<<< HEAD
-=======
     public String enviarCodigoVerificacion(String correo) {
         // Solo verificar que el usuario exista, sin guardar variable
         usuarioRepository.findByCorreo(correo)
@@ -115,14 +104,11 @@ public class UsuarioServiceimpl implements IUsuarioService {
     }
 
     @Override
->>>>>>> feature/HU-04
     @Transactional
     public void delete(Long id) {
         usuarioRepository.deleteById(id);
     }
 
-<<<<<<< HEAD
-=======
     private String generarCodigo() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         StringBuilder codigo = new StringBuilder();
@@ -133,5 +119,4 @@ public class UsuarioServiceimpl implements IUsuarioService {
         return codigo.toString();
     }
 
->>>>>>> feature/HU-04
 }

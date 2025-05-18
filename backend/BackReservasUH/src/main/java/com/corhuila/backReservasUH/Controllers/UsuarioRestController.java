@@ -1,12 +1,8 @@
 package com.corhuila.backReservasUH.Controllers;
 
-<<<<<<< HEAD
 import java.util.List;
-=======
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
->>>>>>> feature/HU-04
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -105,8 +101,6 @@ public class UsuarioRestController {
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Contraseña incorrecta"));
     }
 
-<<<<<<< HEAD
-=======
     @PostMapping("/send-code")
     public ResponseEntity<Map<String, String>> sendCode(@RequestBody Map<String, String> body) {
         String correo = body.get("correo");
@@ -142,5 +136,4 @@ public class UsuarioRestController {
         }
     }
 
->>>>>>> feature/HU-04
 }

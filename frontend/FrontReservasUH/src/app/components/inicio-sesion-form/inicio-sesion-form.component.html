@@ -22,6 +22,11 @@
       <input name="contrasena" [(ngModel)]="usuario1.contrasena" required #contrasena="ngModel" type="password">
     </ion-item>
 
+    <!-- Mensaje de error fuera del contenedor -->
+    <ion-note *ngIf="mensajeError" class="mensaje-error">
+      {{ mensajeError }}
+    </ion-note>
+
     <div class="buttons-container">
       <ion-button
         type="submit"
@@ -31,11 +36,6 @@
         Ingresar
       </ion-button>
     </div>
-    
-    <!-- Mensaje de error fuera del contenedor -->
-    <ion-note *ngIf="mensajeError" class="mensaje-error">
-      {{ mensajeError }}
-    </ion-note>
     
   </form>
 </div>
