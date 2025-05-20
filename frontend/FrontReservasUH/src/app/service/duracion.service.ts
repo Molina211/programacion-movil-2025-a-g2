@@ -10,8 +10,8 @@ import { API_BASE_URL } from './api-url';
 export class DuracionService {
   constructor(private http: HttpClient) { }
 
-  finalizarServicio(endpoint: string, reservaId: number): Observable<Duracion> {
-    return this.http.post<Duracion>(`${API_BASE_URL}/${endpoint}/${reservaId}/finalizar`, {});
+  finalizarServicio(reservaId: number): Observable<Duracion> {
+    return this.http.post<Duracion>(`${API_BASE_URL}/${reservaId}/finalizar`, {});
   }
 
   getByReservaId(endpoint: string, reservaId: number): Observable<Duracion> {

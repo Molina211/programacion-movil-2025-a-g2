@@ -1,7 +1,7 @@
 package com.corhuila.backReservasUH.Controllers;
 
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -66,6 +66,8 @@ public class UsuarioRestController {
         usuarioActual.setCodigo_estudiantil(usuario.getCodigo_estudiantil());
         usuarioActual.setContrasena(usuario.getContrasena());
         usuarioActual.setTipo_documento(usuario.getTipo_documento());
+        usuarioActual.setNum_documento(usuario.getNum_documento());
+        usuarioActual.setRol(usuario.getRol());
 
         // Encriptar la nueva contraseña si fue modificada
         if (usuario.getContrasena() != null && !usuario.getContrasena().isBlank()) {

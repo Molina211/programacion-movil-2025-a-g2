@@ -1,0 +1,182 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-top: 170px;
+}
+
+.form-wrapper ion-label.ion-text-center h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 20px;
+  font-weight: regular;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+form {
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 12px;
+  margin-top: -30px;
+  justify-items: center;
+}
+
+/* Ion-item estilo general */
+ion-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  --background: #fff;
+  --border-color: #ffffff;
+  --border-style: solid;
+  --border-width: 1px;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  --padding-start: 5px;
+  --padding-end: 5px;
+  font-size: 10px;
+  height: 28px;
+}
+
+/* Etiquetas de ion-label */
+ion-item ion-label {
+  --color: #000;
+  color: #000;
+  font-weight: 300;
+  font-size: 16px;
+  margin-right: 24px;
+  white-space: nowrap;
+  width: 100px;
+  flex-shrink: 0;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 400;
+}
+
+/* Inputs generales */
+input[type="password"],
+input[type="text"],
+input[type="email"] {
+  width: 48%;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  color: #000;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-left: 36px;
+}
+
+input[type="password"]:focus {
+  border-color: #1c1c1c;
+}
+
+/* Contenedor del botón */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  margin-bottom: 250px;
+}
+
+/* Botón Guardar */
+ion-button.btn-guardar {
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  width: 100%;
+  height: 32px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+ion-button.btn-guardar:hover:not(:disabled) {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+ion-button.btn-guardar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Mensaje de error */
+.mensaje-error {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  width: 280px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SELECT de tipo documento */
+ion-item.select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  --background: #fff;
+  --border-color: transparent;
+  height: 32px;
+}
+
+/* Label en el select */
+.select-item ion-label {
+  font-size: 16px;
+  color: #000;
+  min-width: 80px;
+  margin-right: 74px;
+  display: inline-block;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 400;
+}
+
+/* Select estilizado */
+.select-item select {
+  width: 90%; /* 🔽 Antes era 100%, ahora más pequeño */
+  height: 28px; /* 🔽 Más bajo */
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  box-sizing: border-box;
+}

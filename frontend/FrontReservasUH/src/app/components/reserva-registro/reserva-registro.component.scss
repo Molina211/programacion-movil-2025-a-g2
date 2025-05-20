@@ -121,6 +121,17 @@ select {
   margin-left: 0;
 }
 
+select:invalid,
+select option[value=""] {
+  color: #aaa !important;
+  font-style: italic;
+}
+
+select option:not([value=""]) {
+  color: #000;
+  font-style: normal;
+}
+
 /* ion-datetime compacto para date y time */
 ion-datetime {
   width: 120px;
@@ -168,6 +179,7 @@ input[type="time"] {
   align-items: center;
   width: 100%;
   margin-top: 18px;
+  margin-bottom: 150px;
 }
 
 /* Botón Guardar */
@@ -183,6 +195,7 @@ ion-button.btn-guardar {
   margin-top: 10px;
   margin-bottom: 0;
   transition: opacity 0.3s ease, transform 0.2s ease;
+  text-transform: none;
 }
 
 /* Hover activo (solo si no está deshabilitado) */

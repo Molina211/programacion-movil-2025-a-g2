@@ -9,6 +9,23 @@
       </select>
     </ion-item>
 
+    <ion-item class="input-container" *ngIf="Rol === 'ADMINISTRADOR'">
+      <ion-label>Estudiante:</ion-label>
+      <select name="usuario" [(ngModel)]="usuarioId" required>
+        <option value="" disabled selected>Seleccione estudiante</option>
+        <option *ngFor="let estudiante of estudiantesSinReserva" [value]="estudiante.id">{{ estudiante.primernombre }} 
+          {{ estudiante.segundonombre }} {{ estudiante.primerapellido }} {{ estudiante.segundoapellido }}</option>
+      </select>
+    </ion-item>
+
+    <ion-item class="input-container" *ngIf="Rol === 'ADMINISTRADOR'">
+      <ion-label>Sala:</ion-label>
+      <select name="sala" [(ngModel)]="salaId" required>
+        <option value="" disabled selected>Seleccione sala</option>
+        <option *ngFor="let sala of salasDisponibles" [value]="sala.id">{{ sala.name }}</option>
+      </select>
+    </ion-item>
+
     <ion-item class="input-container">
       <ion-label>Motivo:</ion-label>
       <select name="motivo" [(ngModel)]="reserva.motivo" required>
@@ -17,19 +34,19 @@
       </select>
     </ion-item>
 
-    <ion-item class="input-container">
+    <ion-item class="input-container" *ngIf="!reserva.id">
       <ion-label>Fecha:</ion-label>
       <input type="date" name="fecha" [(ngModel)]="reserva.fecha" required [class.input-error]="reserva.fecha && !esFechaValida(reserva.fecha)" />
     </ion-item>
-    <div *ngIf="reserva.fecha && !esFechaValida(reserva.fecha)" class="mensaje-error">
+    <div *ngIf="reserva.fecha && !esFechaValida(reserva.fecha) && !reserva.id" class="mensaje-error">
       Fecha permitida hasta más de 5 años y no pasada.
     </div>
 
-    <ion-item class="input-container">
+    <ion-item class="input-container" *ngIf="!reserva.id">
       <ion-label>Hora:</ion-label>
       <input type="time" name="hora" [(ngModel)]="reserva.hora" required [class.input-error]="reserva.hora && !esHoraValida(reserva.hora)" />
     </ion-item>
-    <div *ngIf="reserva.hora && !esHoraValida(reserva.hora)" class="mensaje-error">
+    <div *ngIf="reserva.hora && !esHoraValida(reserva.hora) && !reserva.id" class="mensaje-error">
       Hora fuera del rango permitido (06:00 a 19:59).
     </div>
 
@@ -38,7 +55,7 @@
         type="submit"
         class="btn btn-guardar"
         [disabled]="reservaForm.invalid || !esFechaValida(reserva.fecha) || !esHoraValida(reserva.hora)">
-        Reservar
+        {{ reserva.id ? 'Guardar' : 'Reservar' }}
       </ion-button>
     </div>
   </form>

@@ -1,3 +1,6 @@
+import { Salas } from "./salas";
+import { Usuario } from "./usuario";
+
 export class Reservas {
 
     id: number;
@@ -6,10 +9,10 @@ export class Reservas {
     fecha: string;
     hora: string;
     estado: string;
-    salas: {id: number};
-    usuario: {id: number};
+    salas: Salas;
+    usuario: Usuario;
 
-    constructor(id: number, sede: string, motivo: string, fecha: string, hora: string, estado: string, salas: {id: number}, usuario: {id: number}) {
+    constructor(id: number, sede: string, motivo: string, fecha: string, hora: string, estado: string, salas: Salas, usuario: Usuario) {
         this.id = id;
         this.sede = sede;
         this.motivo = motivo;

@@ -13,8 +13,8 @@ export class UsuarioService {
   
   constructor(private http: HttpClient) {}
 
-  getAll(endpoint: string) {
-    return this.http.get(`${API_BASE_URL}/${endpoint}`);
+  getAll(endpoint: string): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${API_BASE_URL}/${endpoint}`);
   }
 
   getById(endpoint: string, id: number) {

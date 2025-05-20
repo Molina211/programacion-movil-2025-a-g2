@@ -35,10 +35,16 @@ export class InicioSesionFormComponent  implements OnInit {
       // Éxito: guardar datos en localStorage y redirigir
       localStorage.setItem('Rol', response.rol);
       localStorage.setItem('Id', response.id);
-      this.enviarCodigo();
-      this.router.navigate(['/verificar-correo'], {
-      state: { correo: this.usuario1.correo }
-      });
+      if (response.rol === 'EMPLEADO') {
+        this.router.navigate(['/inicio-empleado']);
+      } else if (response.rol === 'ADMINISTRADOR') {
+        this.router.navigate(['/inicio-empleado']);
+      } else if (response.rol === 'ESTUDIANTE') {
+        this.enviarCodigo();
+        this.router.navigate(['/verificar-correo'], {
+          state: { correo: this.usuario1.correo }
+        });
+      }
     },
     error => {
       // Error por código de estado
@@ -50,7 +56,7 @@ export class InicioSesionFormComponent  implements OnInit {
           this.mensajeError = 'La contraseña es incorrecta.';
           break;
         default:
-          this.mensajeError = 'Credenciales incorrectas. Inténtalo de nuevo.';
+          this.mensajeError = 'Credenciales incorrectas.';
       }
 
       // Limpiar el formulario solo si falló

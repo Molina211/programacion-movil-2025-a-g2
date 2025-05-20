@@ -1,7 +1,71 @@
-<div class="form-wrapper">
+<div class="form-wrapper" *ngIf="Rol === null">
   <form #registerForm="ngForm" (ngSubmit)="registrarse(registerForm)" novalidate>
     <ion-label class="ion-text-center">
       <h2>Registro</h2>
+    </ion-label>
+
+    <ion-item>
+      <ion-label>Primer nombre*:</ion-label>
+      <input name="primerNombre" [(ngModel)]="usuario1.primernombre" required #primerNombre="ngModel" type="text">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Segundo nombre:</ion-label>
+      <input name="segundoNombre" [(ngModel)]="usuario1.segundonombre" type="text">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Primer Apellido*:</ion-label>
+      <input name="primerApellido" [(ngModel)]="usuario1.primerapellido" required #primerApellido="ngModel" type="text">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Segundo Apellido*:</ion-label>
+      <input name="segundoApellido" [(ngModel)]="usuario1.segundoapellido" required #segundoApellido="ngModel" type="text">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Correo Institucional*:</ion-label>
+      <input name="correoInstitucional" [(ngModel)]="usuario1.correo" required email #correoInstitucional="ngModel" type="email">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Código estudiantil*:</ion-label>
+      <input name="codigoEstudiantil" [(ngModel)]="usuario1.codigo_estudiantil" (ngModelChange)="actualizarCodigoEstudiantil($event)" required #codigoEstudiantil="ngModel" type="text">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña*:</ion-label>
+      <input name="contrasena" [(ngModel)]="usuario1.contrasena" required #contrasena="ngModel" type="password">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Confirmar contraseña*:</ion-label>
+      <input type="password" name="confirmPassword" #confirmPassword required>
+    </ion-item>
+
+    <div class="buttons-container">
+      <ion-button
+        type="submit"
+        class="btn btn-guardar"
+        [routerDirection]="'forward'"
+        [disabled]="registerForm.invalid">
+        Registrar
+      </ion-button>
+    </div>
+    
+    <!-- Mensaje de error fuera del contenedor -->
+    <ion-note *ngIf="mensajeError" class="mensaje-error">
+      {{ mensajeError }}
+    </ion-note>
+    
+  </form>
+</div>
+
+<div class="form-wrapper" *ngIf="Rol === 'ADMINISTRADOR'">
+  <form #registerForm="ngForm" (ngSubmit)="registrarse(registerForm)" novalidate>
+    <ion-label class="ion-text-center">
+      <h2>Nuevo estudiante</h2>
     </ion-label>
 
     <ion-item>
