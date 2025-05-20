@@ -1,0 +1,38 @@
+<div class="container">
+    <h2 class="titulo" *ngIf="Rol === 'EMPLEADO'">Visualizar reservas</h2>
+    <div *ngIf="Rol === 'EMPLEADO'">
+      <div class="lista-reservas">
+        <div class="sala" *ngFor="let reserva of reservas" (click)="onSalaClick(reserva)">
+          <div class="sala-nombre">{{ getNombreCompleto(reserva) }}</div>
+          <div class="sala-estado" [ngClass]="getEstadoClass(reserva.estado)">
+            {{ reserva.estado }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="Rol === 'ADMINISTRADOR'">
+      <h2 class="titulo">Gestión de reservas</h2>
+      <div class="buscador-wrapper">
+        <input type="text" [(ngModel)]="filtro" placeholder="Buscar estudiante..." class="buscador" />
+        <ion-icon name="search-outline" class="icono-buscar"></ion-icon>
+      </div>
+      <div class="lista-estudiantes">
+        <div *ngFor="let estudiante of estudiantesFiltrados | orderByNombre" class="sala" (click)="onUsuarioClick(estudiante)">
+          <div class="sala-nombre">
+            {{ estudiante.reservas.usuario.primernombre || '-' }}
+            {{ estudiante.reservas.usuario.segundonombre || '' }}
+            {{ estudiante.reservas.usuario.primerapellido || '' }}
+          </div>
+          <div class="sala-estado" [ngClass]="getEstadoClass(estudiante.reservas.estado)">
+            {{ estudiante.reservas.estado }}
+        </div>
+        <div *ngIf="(estudiantesFiltrados | orderByNombre).length === 0" class="no-result">
+          No se encontraron estudiantes.
+        </div>
+      </div>
+      <div class="buttons-container" *ngIf="Rol === 'ADMINISTRADOR'">
+        <ion-button [routerLink]="['/reserva']" [routerDirection]="'forward'" class="login-button">Agregar reserva</ion-button>
+      </div>
+    </div>
+  </div>

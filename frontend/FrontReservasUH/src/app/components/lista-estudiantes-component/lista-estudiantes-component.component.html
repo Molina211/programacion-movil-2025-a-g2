@@ -1,0 +1,51 @@
+<div class="estudiantes-container" *ngIf="Rol === 'EMPLEADO'">
+  <h2 class="titulo">Visualizar estudiantes</h2>
+  <div class="buscador-wrapper">
+    <input type="text" [(ngModel)]="filtro" placeholder="Buscar estudiante..." class="buscador" />
+    <ion-icon name="search-outline" class="icono-buscar"></ion-icon>
+  </div>
+  <div class="lista-estudiantes">
+    <div *ngFor="let estudiante of estudiantesFiltrados | orderByNombre" class="estudiante-card" (click)="onUsuarioClick(estudiante)">
+      <div class="fila">
+        <span class="label">Nombre:</span> <span class="valor">
+          {{ estudiante.reservas?.usuario?.primernombre || '-' }}
+          {{ estudiante.reservas?.usuario?.segundonombre || '' }}
+          {{ estudiante.reservas?.usuario?.primerapellido || '' }}
+        </span>
+      </div>
+      <div class="fila">
+        <span class="label">Código estudiantil:</span> <span class="valor">{{ estudiante.reservas?.usuario?.codigo_estudiantil || '-' }}</span>
+      </div>
+    </div>
+    <div *ngIf="estudiantesFiltrados.length === 0" class="no-result">
+      No se encontraron estudiantes.
+    </div>
+  </div>
+</div>
+
+<div class="estudiantes-container" *ngIf="Rol === 'ADMINISTRADOR'">
+  <h2 class="titulo">Gestión de estudiantes</h2>
+  <div class="buscador-wrapper">
+    <input type="text" [(ngModel)]="filtro" placeholder="Buscar estudiante..." class="buscador" />
+    <ion-icon name="search-outline" class="icono-buscar"></ion-icon>
+  </div>
+  <div class="lista-estudiantes">
+    <div *ngFor="let estudiante of estudiantesFiltrados | orderByNombre" class="estudiante-card" (click)="onUsuarioClick(estudiante)">
+      <div class="fila">
+        <span class="label">Nombre:</span> <span class="valor">
+          {{ estudiante.reservas?.usuario?.primernombre || '-' }}
+          {{ estudiante.reservas?.usuario?.segundonombre || '' }}
+          {{ estudiante.reservas?.usuario?.primerapellido || '' }}
+        </span>
+      </div>
+      <div class="fila">
+        <span class="label">Código estudiantil:</span> <span class="valor">{{ estudiante.reservas?.usuario?.codigo_estudiantil || '-' }}</span>
+      </div>
+    </div>
+    <div *ngIf="estudiantesFiltrados.length === 0" class="no-result">
+      No se encontraron estudiantes.
+    </div>
+    <div class="botones-container">
+      <ion-button [routerLink]="['/registrar-usuario']" class="boton-registrar">Agregar estudiante</ion-button>
+  </div>
+</div>

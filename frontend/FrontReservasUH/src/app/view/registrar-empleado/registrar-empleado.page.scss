@@ -1,0 +1,60 @@
+ion-content {
+  --background: #ffffff;
+}
+
+.login-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding-top: 200px;   /* altura igual a la de .wave-top */
+  padding-bottom: 200px; /* altura igual a la de .wave-bottom */
+}
+
+.wave {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.wave-top {
+  top: 0;
+}
+
+.wave-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  background-color: transparent; /* Sin relleno */
+  border: 2.5px solid white;     /* Borde blanco */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;                  /* Flecha blanca */
+  font-size: 22px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}

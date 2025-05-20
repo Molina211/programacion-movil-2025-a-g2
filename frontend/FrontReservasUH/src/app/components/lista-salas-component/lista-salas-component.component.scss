@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 160px;
+}
+
+.titulo {
+    font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.sala {
+  width: 90%;
+  background-color: #01963f;
+  color: #000;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sala:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.sala-nombre {
+    font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+}
+
+.sala-estado {
+    font-family: 'League Spartan', sans-serif;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Estados */
+.estado-activa {
+  background-color: #c8e6c9;
+  color: #388e3c;
+}
+
+.estado-ocupada {
+  background-color: #ffcdd2;
+  color: #d32f2f;
+}
+
+.estado-inactiva {
+  background-color: #fff9c4;
+  color: #f9a825;
+}

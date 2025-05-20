@@ -1,0 +1,27 @@
+<div class="resumen-container" *ngIf="Rol === 'EMPLEADO'">
+  <div class="resumen-datos"><div><span class="label">Estudiante:</span> <span class="valor estudiante">{{ estudianteNombre }}</span></div>
+    <div><span class="label">Sede:</span> <span class="valor">{{ sede }}</span></div>
+    <div><span class="label">Motivo:</span> <span class="valor">{{ motivo }}</span></div>
+    <div><span class="label">Fecha:</span> <span class="valor">{{ fecha }}</span></div>
+    <div><span class="label">Hora de entrada :</span> <span class="valor">{{ horaEntrada }}</span></div>
+    <div><span class="label">Hora de salida:</span> <span class="valor">{{ horaSalida }}</span></div>
+  </div>
+</div>
+
+<div class="resumen-container" *ngIf="Rol === 'ADMINISTRADOR'">
+  <div class="resumen-datos"><div><span class="label">Estudiante:</span> <span class="valor estudiante">{{ estudianteNombre }}</span></div>
+    <div><span class="label">Sede:</span> <span class="valor">{{ sede }}</span></div>
+    <div><span class="label">Motivo:</span> <span class="valor">{{ motivo }}</span></div>
+    <div><span class="label">Fecha:</span> <span class="valor">{{ fecha }}</span></div>
+    <div><span class="label">Hora de entrada :</span> <span class="valor">{{ horaEntrada }}</span></div>
+    <div><span class="label">Hora de salida:</span> <span class="valor">{{ horaSalida }}</span></div>
+  </div>
+ <div class="buttons-container" *ngIf="Rol === 'ADMINISTRADOR'">
+  <div class="top-buttons">
+    <ion-button (click)="editarReserva()" [routerDirection]="'forward'" class="login-button">Editar reserva</ion-button>
+    <ion-button (click)="eliminarReserva()" [routerDirection]="'forward'" class="login-button">Eliminar reserva</ion-button>
+  </div>
+  <div class="bottom-button">
+    <ion-button *ngIf="estadoReserva === 'En uso'" (click)="finalizarReserva()" [routerDirection]="'forward'" class="login-button">Finalizar reserva</ion-button>
+  </div>
+</div>

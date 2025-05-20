@@ -1,0 +1,84 @@
+<ion-content>
+  <div class="login-container">
+
+    <div class="back-button" (click)="goBack()">
+  <ion-icon name="arrow-back-outline" style="color: white;"></ion-icon>
+</div>
+
+    <a routerLink="/perfil" class="profile-container">
+  <img src="assets/images/logo-perfil.jpg" alt="Perfil" class="profile-image" />
+</a>
+
+    <!-- Curva superior -->
+    <div class="wave wave-top">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .animated-path {
+        animation: waveAnim 10s linear infinite;
+      }
+
+      @keyframes waveAnim {
+        0% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z");
+        }
+        20% {
+          d: path("M0,75 C400,100 1040,0 1440,75 L1440,0 L0,0 Z");
+        }
+        40% {
+          d: path("M0,75 C500,150 940,0 1440,75 L1440,0 L0,0 Z");
+        }
+        60% {
+          d: path("M0,75 C580,0 860,150 1440,75 L1440,0 L0,0 Z");
+        }
+        80% {
+          d: path("M0,75 C200,0 960,150 1440,75 L1440,0 L0,0 Z");
+        }
+        100% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z");
+        }
+      }
+    </style>
+
+    <path d="M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z" fill="#01963f" class="animated-path" />
+  </svg>
+</div>
+
+<app-info-estudiante-empleado-component></app-info-estudiante-empleado-component>
+
+    <!-- Curva inferior -->
+    <div class="wave wave-bottom">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .animated-path2 {
+        animation: waveBottomAnim 10s linear infinite;
+      }
+
+      @keyframes waveBottomAnim {
+        0% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,150 L0,150 Z");
+        }
+        20% {
+          d: path("M0,75 C400,100 1040,0 1440,75 L1440,150 L0,150 Z");
+        }
+        40% {
+          d: path("M0,75 C500,150 940,0 1440,75 L1440,150 L0,150 Z");
+        }
+        60% {
+          d: path("M0,75 C580,0 860,150 1440,75 L1440,150 L0,150 Z");
+        }
+        80% {
+          d: path("M0,75 C200,0 960,150 1440,75 L1440,150 L0,150 Z");
+        }
+        100% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,150 L0,150 Z");
+        }
+      }
+    </style>
+
+    <path d="M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z" fill="#01963f" class="animated-path2"/>
+  </svg>
+</div>
+
+
+  </div>
+</ion-content>

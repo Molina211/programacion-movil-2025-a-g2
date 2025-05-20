@@ -1,0 +1,127 @@
+.estudiantes-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 10px 40px 10px;
+  background: #fff;
+  margin-top: 120px;
+}
+
+.titulo {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 18px;
+  margin-top: 18px;
+  color: #111;
+}
+
+.buscador-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.buscador {
+  color: #000;
+  width: 320px;
+  max-width: 90vw;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #19a74b;
+  font-size: 1.1rem;
+  font-family: 'League Spartan', sans-serif;
+  margin-right: 8px;
+  outline: none;
+  background: #f8f8f8;
+  transition: border 0.2s;
+}
+.buscador:focus {
+  border: 1.5px solid #01963f;
+}
+
+.icono-buscar {
+  font-size: 1.5rem;
+  color: #19a74b;
+}
+
+.lista-estudiantes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.estudiante-card {
+  background: #f6fff8;
+  border: 1.5px solid #19a74b;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(25,167,75,0.07);
+  padding: 18px 22px 14px 22px;
+  min-width: 260px;
+  max-width: 320px;
+  width: 100%;
+  margin-bottom: 8px;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transition: box-shadow 0.2s, border 0.2s;
+  cursor: pointer;
+}
+.estudiante-card:hover {
+  background: #eafff0;
+  box-shadow: 0 4px 16px 0 rgba(25,167,75,0.13);
+  border: 1.5px solid #01963f;
+}
+
+.fila {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.label {
+  font-weight: 500;
+  color: #01963f;
+  min-width: 58px;
+  font-size: 16px;
+  margin-left: -12px;
+}
+.valor {
+  color: #222;
+  font-weight: 400;
+}
+
+.no-result {
+  width: 100%;
+  text-align: center;
+  color: #b00;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.boton-container {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 200px;
+  margin-left: 50px;
+  margin-bottom: 120px;
+}
+
+ion-button.boton-registrar{
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+}

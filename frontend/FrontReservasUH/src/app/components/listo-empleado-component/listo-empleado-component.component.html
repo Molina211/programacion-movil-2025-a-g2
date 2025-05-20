@@ -1,0 +1,27 @@
+<div class="estudiantes-container" *ngIf="Rol === 'ADMINISTRADOR'">
+  <h2 class="titulo">Gestión de empleados</h2>
+  <div class="buscador-wrapper">
+    <input type="text" [(ngModel)]="filtro" placeholder="Buscar empleados..." class="buscador" />
+    <ion-icon name="search-outline" class="icono-buscar"></ion-icon>
+  </div>
+  <div class="lista-estudiantes">
+    <div *ngFor="let estudiante of estudiantesFiltrados | orderByNombre" class="estudiante-card" (click)="onUsuarioClick(estudiante)">
+      <div class="fila">
+        <span class="label">Nombre:</span> <span class="valor">
+          {{ estudiante.reservas?.usuario?.primernombre || '-' }}
+          {{ estudiante.reservas?.usuario?.segundonombre || '' }}
+          {{ estudiante.reservas?.usuario?.primerapellido || '' }}
+        </span>
+      </div>
+      <div class="fila">
+        <span class="label">Numero documento:</span> <span class="valor">{{ estudiante.reservas.usuario.num_documento || '-' }}</span>
+      </div>
+    </div>
+    <div *ngIf="estudiantesFiltrados.length === 0" class="no-result">
+      No se encontraron estudiantes.
+    </div>
+    <div class="botones-container">
+      <ion-button [routerLink]="['/registrar-empleado']" class="boton-registrar">Agregar empleado</ion-button>
+  </div>
+  </div>
+</div>

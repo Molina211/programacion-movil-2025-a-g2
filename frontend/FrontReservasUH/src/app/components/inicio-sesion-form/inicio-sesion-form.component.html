@@ -1,0 +1,41 @@
+<div class="form-wrapper">
+  <form #registerForm="ngForm" (ngSubmit)="ingresar()">
+    <ion-label class="ion-text-center">
+      <h2>Inicio de sesión</h2>
+    </ion-label>
+
+    <div class="content-area">
+      <div class="logo-container">
+            <div class="logo-image">
+              <img src="assets/images/logo-inicio-sesion.jpg" alt="Logo UH" class="uh-logo" />
+          </div>
+      </div>
+    </div>
+
+    <ion-item>
+      <ion-label>Correo:</ion-label>
+      <input name="correo" [(ngModel)]="usuario1.correo" required email #correo="ngModel" type="email">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <input name="contrasena" [(ngModel)]="usuario1.contrasena" required #contrasena="ngModel" type="password">
+    </ion-item>
+
+    <!-- Mensaje de error fuera del contenedor -->
+    <ion-note *ngIf="mensajeError" class="mensaje-error">
+      {{ mensajeError }}
+    </ion-note>
+
+    <div class="buttons-container">
+      <ion-button
+        type="submit"
+        class="btn btn-ingresar"
+        [routerDirection]="'forward'"
+        [disabled]="registerForm.invalid">
+        Ingresar
+      </ion-button>
+    </div>
+    
+  </form>
+</div>

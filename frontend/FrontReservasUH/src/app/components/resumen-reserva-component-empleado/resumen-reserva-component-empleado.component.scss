@@ -1,0 +1,54 @@
+.resumen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.resumen-datos {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 18px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.resumen-datos > div {
+  margin-bottom: 20px;
+  padding: 1px 0;
+}
+
+.resumen-datos .label {
+  font-weight: 400;
+  color: #222;
+  font-size: 20px;
+}
+
+.resumen-datos .valor {
+  font-weight: 500;
+  color: #222;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 150px;
+  gap: 10px;
+}
+
+/* Botones más pequeños para todos los roles */
+ion-button.login-button {
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+}
