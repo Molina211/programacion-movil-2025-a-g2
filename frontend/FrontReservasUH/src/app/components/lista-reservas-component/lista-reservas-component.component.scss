@@ -1,0 +1,197 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 160px;
+}
+
+.titulo {
+    font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.sala {
+  width: 90%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #01963f;
+  color: #000;
+  padding: 16px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sala:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.sala-nombre {
+    font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+}
+
+.sala-estado {
+    font-family: 'League Spartan', sans-serif;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Estados */
+.estado-Reservada {
+  background-color: #c8e6c9;
+  color: #388e3c;
+}
+
+.estado-cancelada {
+  background-color: #ffcdd2;
+  color: #d32f2f;
+}
+
+.estado-en-uso {
+  background-color: #fff9c4;
+  color: #f9a825;
+}
+
+.estado-terminada {
+  background-color: #bbdefb;
+  color: #1976d2;
+}
+
+.estudiantes-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 10px 40px 10px;
+  background: #fff;
+  margin-top: 120px;
+}
+
+.buscador-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.buscador {
+  color: #000;
+  width: 320px;
+  max-width: 90vw;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #19a74b;
+  font-size: 1.1rem;
+  font-family: 'League Spartan', sans-serif;
+  margin-right: 8px;
+  outline: none;
+  background: #f8f8f8;
+  transition: border 0.2s;
+}
+.buscador:focus {
+  border: 1.5px solid #01963f;
+}
+
+.icono-buscar {
+  font-size: 1.5rem;
+  color: #19a74b;
+}
+
+.lista-estudiantes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  padding: 0 10px;
+  margin-bottom: 200px;
+}
+
+.estudiante-card {
+  background: #f6fff8;
+  border: 1.5px solid #19a74b;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(25,167,75,0.07);
+  padding: 18px 22px 14px 22px;
+  min-width: 260px;
+  max-width: 320px;
+  width: 100%;
+  margin-bottom: 8px;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transition: box-shadow 0.2s, border 0.2s;
+  cursor: pointer;
+}
+.estudiante-card:hover {
+  background: #eafff0;
+  box-shadow: 0 4px 16px 0 rgba(25,167,75,0.13);
+  border: 1.5px solid #01963f;
+}
+
+.fila {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.label {
+  font-weight: 500;
+  color: #01963f;
+  min-width: 58px;
+  font-size: 16px;
+  margin-left: -12px;
+}
+.valor {
+  color: #222;
+  font-weight: 400;
+}
+
+.no-result {
+  width: 100%;
+  text-align: center;
+  color: #b00;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.lista-reservas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+/* Botones más pequeños para todos los roles */
+ion-button.login-button {
+  --background: #000000;
+  --color: white;
+  --border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+}

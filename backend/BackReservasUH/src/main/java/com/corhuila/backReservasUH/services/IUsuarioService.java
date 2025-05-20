@@ -15,7 +15,7 @@ public interface IUsuarioService {
 
     void delete(Long id);
 
-    Optional<Usuario> login(String email, String password);
+    Optional<Usuario> login(String correo, String password);
 
     Usuario findByCorreo(String correo);
 

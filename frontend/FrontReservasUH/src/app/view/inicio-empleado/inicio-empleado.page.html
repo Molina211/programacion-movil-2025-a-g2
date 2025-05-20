@@ -1,0 +1,108 @@
+<ion-content>
+<div>
+  <div class="login-container">
+
+    <a routerLink="/perfil" class="profile-container">
+  <img src="assets/images/logo-perfil.jpg" alt="Perfil" class="profile-image" />
+</a>
+
+    <!-- Curva superior -->
+    <div class="wave wave-top">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .animated-path {
+        animation: waveAnim 10s linear infinite;
+      }
+
+      @keyframes waveAnim {
+        0% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z");
+        }
+        20% {
+          d: path("M0,75 C400,100 1040,0 1440,75 L1440,0 L0,0 Z");
+        }
+        40% {
+          d: path("M0,75 C500,150 940,0 1440,75 L1440,0 L0,0 Z");
+        }
+        60% {
+          d: path("M0,75 C580,0 860,150 1440,75 L1440,0 L0,0 Z");
+        }
+        80% {
+          d: path("M0,75 C200,0 960,150 1440,75 L1440,0 L0,0 Z");
+        }
+        100% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z");
+        }
+      }
+    </style>
+
+    <path d="M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z" fill="#01963f" class="animated-path" />
+  </svg>
+</div>
+
+<div class="content-area" *ngIf="Rol === 'EMPLEADO'">
+      <div class="logo-container">
+            <div class="logo-image">
+              <img src="assets/images/logo-empleado.jpg" alt="Logo UH" class="uh-logo" />
+          </div>
+      </div>
+
+      <div class="welcome-text" *ngIf="Rol === 'EMPLEADO'">
+        <p>Bienvenido a Reservas UH</p>
+      </div>
+
+      <div class="buttons-container"  *ngIf="Rol === 'EMPLEADO'">
+        <ion-button [routerLink]="['/lista-estudiantes']" [routerDirection]="'forward'" class="login-button">Visualizar estudiantes</ion-button>
+        <ion-button [routerLink]="['/lista-reservas']" [routerDirection]="'forward'" class="register-button">Visualizar reservas</ion-button>
+      </div>
+    </div>
+
+<div class="content-area" *ngIf="Rol === 'ADMINISTRADOR'">
+    <div class="welcome-text">
+        <p>Bienvenido a Reservas UH</p>
+      </div>
+
+      <div class="buttons-container">
+        <ion-button [routerLink]="['/lista-reservas']" [routerDirection]="'forward'" class="register-button">Gestionar reservas</ion-button>
+        <ion-button [routerLink]="['/lista-empleado']" [routerDirection]="'forward'" class="login-button">Gestionar empleados</ion-button>
+        <ion-button [routerLink]="['/lista-admin']" [routerDirection]="'forward'" class="admin-button">Gestionar administradores</ion-button>
+        <ion-button [routerLink]="['/lista-estudiantes']" [routerDirection]="'forward'" class="estudiante-button">Gestionar estudiantes</ion-button>
+      </div>
+    </div>
+    </div>
+
+    <!-- Curva inferior -->
+    <div class="wave wave-bottom">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .animated-path2 {
+        animation: waveBottomAnim 10s linear infinite;
+      }
+
+      @keyframes waveBottomAnim {
+        0% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,150 L0,150 Z");
+        }
+        20% {
+          d: path("M0,75 C400,100 1040,0 1440,75 L1440,150 L0,150 Z");
+        }
+        40% {
+          d: path("M0,75 C500,150 940,0 1440,75 L1440,150 L0,150 Z");
+        }
+        60% {
+          d: path("M0,75 C580,0 860,150 1440,75 L1440,150 L0,150 Z");
+        }
+        80% {
+          d: path("M0,75 C200,0 960,150 1440,75 L1440,150 L0,150 Z");
+        }
+        100% {
+          d: path("M0,75 C480,0 960,150 1440,75 L1440,150 L0,150 Z");
+        }
+      }
+    </style>
+
+    <path d="M0,75 C480,0 960,150 1440,75 L1440,0 L0,0 Z" fill="#01963f" class="animated-path2"/>
+  </svg>
+</div>
+</div>
+</ion-content>

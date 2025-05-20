@@ -24,12 +24,14 @@ export class ReservasService {
   }
 
   delete(endpoint: string, id: number): Observable<any> {
-    return this.http.delete(`${API_BASE_URL}/${endpoint}/${id}`);
-  }
+  return this.http.delete(`${API_BASE_URL}/${endpoint}/${id}`, { responseType: 'text' });
+}
 
   getByEstado(endpoint: string, estado: string): Observable<Reservas[]> {
     return this.http.get<Reservas[]>(`${API_BASE_URL}/${endpoint}/estado/${estado}`);
   }
 
-  
+  update(endpoint: string, reserva: Reservas, id: number): Observable<any> {
+    return this.http.put(`${API_BASE_URL}/${endpoint}/${id}`, reserva, { responseType: 'text' });
+  }
 }

@@ -39,6 +39,8 @@ export class RegistroFormComponent {
 
   Id: number | null = null;
 
+  public estaEditando: boolean = false;
+
   ngOnInit(): void {
   const storedRol = localStorage.getItem('Rol');
   if (storedRol) {
@@ -47,6 +49,12 @@ export class RegistroFormComponent {
   const storedId = localStorage.getItem('Id');
   if (storedId) {
     this.Id = Number(storedId); // Es tipo number
+  }
+  const reservaEditStr = localStorage.getItem('reservaForm2');
+  if (reservaEditStr) {
+    const reservaEdit = JSON.parse(reservaEditStr);
+    this.usuario1 = reservaEdit.usuario || this.usuario1;
+    this.estaEditando = true;
   }
 }
   
@@ -74,20 +82,37 @@ export class RegistroFormComponent {
     return;
   }
 
-  this.usuarioService.create('users', this.usuario1).subscribe({
-    next: (response: Usuario) => {
-      console.log('Registro exitoso:', response);
-      if (response.rol === 'ADMINISTRADOR') {
-        this.router.navigate(['/inicio']);
-      } else {
-        this.router.navigate(['/iniciar-sesion']);
+  if (this.Rol === 'ADMINISTRADOR' && this.usuario1.id) {
+    // Update usuario
+    this.usuarioService.update('users', this.usuario1.id, this.usuario1).subscribe({
+      next: (response: any) => {
+        console.log('Usuario actualizado:', response);
+        localStorage.removeItem('reservaForm2');
+        localStorage.removeItem('usuarioSeleccionado');
+        this.router.navigate(['/lista-estudiantes']);
+      },
+      error: (error: any) => {
+        console.error('Error al actualizar usuario:', error);
+        this.mensajeError = 'La actualización ha fallado. Inténtalo de nuevo.';
       }
-    },
-    error: (error: Usuario) => {
-      console.error('Error en el registro:', error);
-      this.mensajeError = 'El registro ha fallado. Inténtalo de nuevo.';
-    }
-  });
+    });
+  } else if (this.Rol === 'ADMINISTRADOR' || this.Rol === 'ESTUDIANTE' || this.Rol === null) {
+    // Crear usuario
+    this.usuarioService.create('users', this.usuario1).subscribe({
+      next: (response: Usuario) => {
+        console.log('Registro exitoso:', response);
+        if (this.Rol === 'ADMINISTRADOR') {
+          this.router.navigate(['/inicio-empleado']);
+        } else {
+          this.router.navigate(['/iniciar-sesion']);
+        }
+      },
+      error: (error: Usuario) => {
+        console.error('Error en el registro:', error);
+        this.mensajeError = 'El registro ha fallado. Inténtalo de nuevo.';
+      }
+    });
+  }
 }
 
   passwordsIguales(): boolean {

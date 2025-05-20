@@ -1,6 +1,6 @@
 export class Usuario {
     
-    id: null;
+    public id: number | null
     primernombre: string;
     segundonombre: string;
     primerapellido: string;

@@ -1,0 +1,21 @@
+<div class="estudiante-container">
+  <h2 class="titulo">Administrador</h2>
+  <div class="info-row">
+    <div class="info-col">
+      <div class="label">Nombre completo</div>
+      <div class="valor nombre-completo">{{ primernombre }} {{ segundonombre }} {{ primerapellido }} {{ segundoapellido }}</div>
+    </div>
+    <div class="info-col">
+      <div class="label">Correo</div>
+      <div class="valor correo">{{ correo }}</div>
+    </div>
+  </div>
+  <div class="codigo-estudiantil-row">
+    <div class="label">Numero documento</div>
+    <div class="valor codigo-estudiantil">{{ num_documento }}</div>
+  </div>
+  <div class="top-buttons">
+    <ion-button (click)="editarReserva()" [routerDirection]="'forward'" class="login-button">Editar reserva</ion-button>
+    <ion-button (click)="eliminarReserva()" [routerDirection]="'forward'" class="login-button">Eliminar reserva</ion-button>
+  </div>
+</div>
