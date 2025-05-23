@@ -117,6 +117,24 @@
   ```
   
 7. Desde Android Studio:
-  
-  - Compila el proyecto.
-  - Ejecuta la aplicación o genera el archivo `.apk`.
+
+   - Ve al panel del proyecto y navega a la ruta:  
+     `android/app/src/main/res/xml/network_security_config.xml`
+
+   - Abre el archivo `network_security_config.xml` y busca la línea:
+
+     ```xml
+     <domain includeSubdomains="true">172.20.10.2</domain>
+     ```
+
+   - Sustituye la IP (`172.20.10.2`) por tu **Dirección IPv4** obtenida previamente (por ejemplo, `192.168.1.100`):
+
+     ```xml
+     <domain includeSubdomains="true">192.168.1.100</domain>
+     ```
+
+   - Guarda los cambios.
+
+   - Luego, en Android Studio:
+     - Compila el proyecto.
+     - Ejecuta la aplicación en un emulador o dispositivo físico, o bien genera el archivo `.apk`.
