@@ -90,11 +90,10 @@ input[type="password"]:focus {
   margin-bottom: 250px;
 }
 
-/* Botón Guardar */
-ion-button.btn-guardar {
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+button.btn-guardar {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
   font-weight: 500;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
@@ -103,14 +102,14 @@ ion-button.btn-guardar {
   margin-top: 50px;
   margin-bottom: 20px;
   transition: opacity 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
-
-ion-button.btn-guardar:hover:not(:disabled) {
+button.btn-guardar:hover:not(:disabled) {
   transform: scale(1.02);
   opacity: 0.9;
 }
-
-ion-button.btn-guardar:disabled {
+button.btn-guardar:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;

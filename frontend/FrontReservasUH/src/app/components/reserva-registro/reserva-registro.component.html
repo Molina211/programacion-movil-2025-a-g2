@@ -2,7 +2,7 @@
   <form #reservaForm="ngForm" (ngSubmit)="reservar(reservaForm)" novalidate>
 
     <ion-item class="input-container">
-      <ion-label>Sede:</ion-label>
+      <ion-label>Sede<span class="asterisco">*</span>:</ion-label>
       <select name="sede" [(ngModel)]="reserva.sede" required>
         <option value="" disabled selected>Seleccione sede</option>
         <option *ngFor="let s of sedes" [value]="s">{{ s }}</option>
@@ -10,7 +10,7 @@
     </ion-item>
 
     <ion-item class="input-container" *ngIf="Rol === 'ADMINISTRADOR'">
-      <ion-label>Estudiante:</ion-label>
+      <ion-label>Estudiante<span class="asterisco">*</span>:</ion-label>
       <select name="usuario" [(ngModel)]="usuarioId" required>
         <option value="" disabled selected>Seleccione estudiante</option>
         <option *ngFor="let estudiante of estudiantesSinReserva" [value]="estudiante.id">{{ estudiante.primernombre }} 
@@ -19,7 +19,7 @@
     </ion-item>
 
     <ion-item class="input-container" *ngIf="Rol === 'ADMINISTRADOR'">
-      <ion-label>Sala:</ion-label>
+      <ion-label>Sala<span class="asterisco">*</span>:</ion-label>
       <select name="sala" [(ngModel)]="salaId" required>
         <option value="" disabled selected>Seleccione sala</option>
         <option *ngFor="let sala of salasDisponibles" [value]="sala.id">{{ sala.name }}</option>
@@ -27,7 +27,7 @@
     </ion-item>
 
     <ion-item class="input-container">
-      <ion-label>Motivo:</ion-label>
+      <ion-label>Motivo<span class="asterisco">*</span>:</ion-label>
       <select name="motivo" [(ngModel)]="reserva.motivo" required>
         <option value="" disabled selected>Seleccione motivo</option>
         <option *ngFor="let m of motivos" [value]="m">{{ m }}</option>
@@ -35,7 +35,7 @@
     </ion-item>
 
     <ion-item class="input-container" *ngIf="!reserva.id">
-      <ion-label>Fecha:</ion-label>
+      <ion-label>Fecha<span class="asterisco">*</span>:</ion-label>
       <input type="date" name="fecha" [(ngModel)]="reserva.fecha" required [class.input-error]="reserva.fecha && !esFechaValida(reserva.fecha)" />
     </ion-item>
     <div *ngIf="reserva.fecha && !esFechaValida(reserva.fecha) && !reserva.id" class="mensaje-error">
@@ -43,7 +43,7 @@
     </div>
 
     <ion-item class="input-container" *ngIf="!reserva.id">
-      <ion-label>Hora:</ion-label>
+      <ion-label>Hora<span class="asterisco">*</span>:</ion-label>
       <input type="time" name="hora" [(ngModel)]="reserva.hora" required [class.input-error]="reserva.hora && !esHoraValida(reserva.hora)" />
     </ion-item>
     <div *ngIf="reserva.hora && !esHoraValida(reserva.hora) && !reserva.id" class="mensaje-error">
@@ -51,12 +51,12 @@
     </div>
 
     <div class="buttons-container">
-      <ion-button
+      <button
         type="submit"
         class="btn btn-guardar"
         [disabled]="reservaForm.invalid || !esFechaValida(reserva.fecha) || !esHoraValida(reserva.hora)">
         {{ reserva.id ? 'Guardar' : 'Reservar' }}
-      </ion-button>
+      </button>
     </div>
   </form>
 </div>

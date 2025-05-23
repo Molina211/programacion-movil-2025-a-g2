@@ -2,7 +2,7 @@
 <div>
   <div class="login-container">
 
-    <a routerLink="/perfil" class="profile-container">
+    <a [routerLink]="Rol === 'ADMINISTRADOR' ? '/perfil-admin' : (Rol === 'EMPLEADO' ? '/perfil-empleado' : '/')" class="profile-container">
   <img src="assets/images/logo-perfil.jpg" alt="Perfil" class="profile-image" />
 </a>
 
@@ -52,8 +52,8 @@
       </div>
 
       <div class="buttons-container"  *ngIf="Rol === 'EMPLEADO'">
-        <ion-button [routerLink]="['/lista-estudiantes']" [routerDirection]="'forward'" class="login-button">Visualizar estudiantes</ion-button>
-        <ion-button [routerLink]="['/lista-reservas']" [routerDirection]="'forward'" class="register-button">Visualizar reservas</ion-button>
+        <button [routerLink]="['/lista-estudiantes']" [routerDirection]="'forward'" class="login-button">Visualizar estudiantes</button>
+        <button [routerLink]="['/lista-reservas']" [routerDirection]="'forward'" class="register-button">Visualizar reservas</button>
       </div>
     </div>
 
@@ -63,10 +63,10 @@
       </div>
 
       <div class="buttons-container">
-        <ion-button [routerLink]="['/lista-reservas']" [routerDirection]="'forward'" class="register-button">Gestionar reservas</ion-button>
-        <ion-button [routerLink]="['/lista-empleado']" [routerDirection]="'forward'" class="login-button">Gestionar empleados</ion-button>
-        <ion-button [routerLink]="['/lista-admin']" [routerDirection]="'forward'" class="admin-button">Gestionar administradores</ion-button>
-        <ion-button [routerLink]="['/lista-estudiantes']" [routerDirection]="'forward'" class="estudiante-button">Gestionar estudiantes</ion-button>
+        <button [routerLink]="['/lista-reservas']" [routerDirection]="'forward'" class="register-button">Gestionar reservas</button>
+        <button [routerLink]="['/lista-empleado']" [routerDirection]="'forward'" class="login-button">Gestionar empleados</button>
+        <button [routerLink]="['/lista-admin']" [routerDirection]="'forward'" class="admin-button">Gestionar administradores</button>
+        <button [routerLink]="['/lista-estudiantes']" [routerDirection]="'forward'" class="estudiante-button">Gestionar estudiantes</button>
       </div>
     </div>
     </div>

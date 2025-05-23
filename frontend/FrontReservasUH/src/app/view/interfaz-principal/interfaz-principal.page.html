@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content fullscreen scroll="false" class="splash-content">
   <div class="login-container">
 
     <!-- Curva superior -->
@@ -48,8 +48,8 @@
       </div>
 
       <div class="buttons-container">
-        <ion-button [routerLink]="['/iniciar-sesion']" [routerDirection]="'forward'" class="login-button">Iniciar sesión</ion-button>
-        <ion-button [routerLink]="['/registrar-usuario']" [routerDirection]="'forward'" class="register-button">Registrarse</ion-button>
+        <button [routerLink]="['/iniciar-sesion']" [routerDirection]="'forward'" class="login-button">Iniciar sesión</button>
+        <button [routerLink]="['/registrar-usuario']" [routerDirection]="'forward'" class="register-button">Registrarse</button>
       </div>
     </div>
 

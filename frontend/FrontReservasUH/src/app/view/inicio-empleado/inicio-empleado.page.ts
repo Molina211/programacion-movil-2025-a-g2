@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { RouterLink, Router } from '@angular/router';
+import { IonicModule, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio-empleado',
@@ -17,7 +17,7 @@ export class InicioEmpleadoPage implements OnInit {
 
   Id : number | null = null;
 
-  constructor() { }
+  constructor(private platform: Platform, private router: Router) { }
 
   ngOnInit() {
     const storedRol = localStorage.getItem('Rol');
@@ -28,6 +28,11 @@ export class InicioEmpleadoPage implements OnInit {
     if (storedId) {
       this.Id = Number(storedId); // Es tipo number
     }
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      if (this.router.url === '/inicio-empleado') {
+        // No hacer nada
+      }
+    });
   }
 
 }

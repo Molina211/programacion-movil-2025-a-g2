@@ -34,4 +34,8 @@ export class ReservasService {
   update(endpoint: string, reserva: Reservas, id: number): Observable<any> {
     return this.http.put(`${API_BASE_URL}/${endpoint}/${id}`, reserva, { responseType: 'text' });
   }
+
+  actualizarEstadoReserva(endpoint: string, id: number, nuevoEstado: string): Observable<any> {
+    return this.http.put(`${API_BASE_URL}/${endpoint}/${id}/estado`, { nuevoEstado }, { responseType: 'text' });
+  }
 }

@@ -2,7 +2,7 @@
   padding: 40px;
   margin-top: 160px;
   margin-bottom: 50px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   color: #000;
 }
 
@@ -42,23 +42,27 @@ font-family: 'League Spartan', sans-serif;
 }
 
 .boton-container {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 15px;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 15px;
   width: 200px;
-  margin-left: 50px;
+  margin-left: 60px;
   margin-bottom: 120px;
 }
 
-ion-button.reservar-btn {
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+.boton-container button.reservar-btn {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
   text-transform: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
 }
