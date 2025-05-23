@@ -27,7 +27,6 @@ export class ResumenReservaComponentEmpleadoComponent  implements OnInit {
 
   estadoReserva: string = '';
 
-
   Rol: string | null = null;
 
   Id: number | null = null;
@@ -50,11 +49,15 @@ export class ResumenReservaComponentEmpleadoComponent  implements OnInit {
     if (this.Rol === 'ADMINISTRADOR') {
       this.cargarDatosAdministrador();
     }
+    if (this.Rol === 'ESTUDIANTE') {
+      this.cargarDatosEstudiante();
+    }
   }
 
   ionViewWillEnter() {
     this.cargarDatosEmpleado();
     this.cargarDatosAdministrador();
+    this.cargarDatosEstudiante();
   }
   
   editarReserva() {
@@ -236,8 +239,101 @@ export class ResumenReservaComponentEmpleadoComponent  implements OnInit {
         }
       }
     }
-    if (this.usuarioSeleccionado?.reservas?.estado) {
+    if (this.usuarioSeleccionado.reservas.estado) {
   this.estadoReserva = this.usuarioSeleccionado.reservas.estado;
 }
+  }
+
+  cargarDatosEstudiante() {
+    const storedId = localStorage.getItem('Id');
+    if (storedId) {
+      this.Id = Number(storedId);
+      const reservaStr = localStorage.getItem('reservaSeleccionada');
+      if (reservaStr) {
+        const reserva = JSON.parse(reservaStr);
+        if (reserva.usuario && reserva.usuario.id === this.Id) {
+          this.sede = reserva.sede || '';
+          this.motivo = reserva.motivo || '';
+          this.fecha = reserva.fecha || '';
+          if (reserva.salas && reserva.salas.id) {
+            this.sala = reserva.salas.id;
+          } else if (reserva.salaId) {
+            this.sala = reserva.salaId;
+          } else {
+            this.sala = 0;
+          }
+          this.horaEntrada = reserva.hora || '';
+          if (reserva.hora) {
+            const [h, m, s] = reserva.hora.split(':').map(Number);
+            const date = new Date();
+            date.setHours(h, m, s || 0, 0);
+            date.setMinutes(date.getMinutes() + 2);
+            const horas = date.getHours().toString().padStart(2, '0');
+            const minutos = date.getMinutes().toString().padStart(2, '0');
+            const segundos = (typeof s !== 'undefined') ? (date.getSeconds().toString().padStart(2, '0')) : undefined;
+            this.horaSalida = segundos ? `${horas}:${minutos}:${segundos}` : `${horas}:${minutos}`;
+          } else {
+            this.horaSalida = '';
+          }
+          this.estudianteNombre = `${reserva.usuario.primernombre || ''} ${reserva.usuario.segundonombre || ''} ${reserva.usuario.primerapellido || ''} ${reserva.usuario.segundoapellido || ''}`.replace(/  +/g, ' ').trim();
+          // Obtener estado de la reserva para el estudiante
+          if (reserva.estado) {
+            this.estadoReserva = reserva.estado;
+          } else if (reserva.reservas && reserva.reservas.estado) {
+            this.estadoReserva = reserva.reservas.estado;
+          }
+        }
+      }
+    }
+    // Extra: si existe usuarioSeleccionado, cargar datos de ahí también
+    const usuarioSelStr = localStorage.getItem('usuarioSeleccionado');
+    if (usuarioSelStr) {
+      this.usuarioSeleccionado = JSON.parse(usuarioSelStr);
+      this.estudianteNombre = `${this.usuarioSeleccionado.primernombre || ''} ${this.usuarioSeleccionado.segundonombre || ''} ${this.usuarioSeleccionado.primerapellido || ''} ${this.usuarioSeleccionado.segundoapellido || ''}`.replace(/  +/g, ' ').trim();
+      if (this.usuarioSeleccionado.finServicio) {
+        const finParts = this.usuarioSeleccionado.finServicio.split(' ');
+        this.horaSalida = finParts.length > 1 ? finParts[1] : this.usuarioSeleccionado.finServicio;
+      }
+      if (this.usuarioSeleccionado.inicioServicio) {
+        const iniParts = this.usuarioSeleccionado.inicioServicio.split(' ');
+        this.horaEntrada = iniParts.length > 1 ? iniParts[1] : this.usuarioSeleccionado.inicioServicio;
+      }
+      // Obtener estado de la reserva para el estudiante desde usuarioSeleccionado
+      if (this.usuarioSeleccionado.estado) {
+        this.estadoReserva = this.usuarioSeleccionado.estado;
+      } else if (this.usuarioSeleccionado.reservas && this.usuarioSeleccionado.reservas.estado) {
+        this.estadoReserva = this.usuarioSeleccionado.reservas.estado;
+      }
+    }
+    // Debug: mostrar en consola el estado obtenido
+    console.log('Rol:', this.Rol, 'estadoReserva:', this.estadoReserva);
+  }
+
+  cancelarReserva() {
+    const reservaStr = localStorage.getItem('reservaSeleccionada');
+    if (!reservaStr) {
+      console.error('No se encontró usuarioSeleccionado en localStorage');
+      return;
+    }
+    const reserva = JSON.parse(reservaStr);
+    console.log('Objeto reserva en cancelarReserva:', reserva);
+    // Intenta obtener el id de varias formas y fuerza a number
+    let id = reserva.reservas?.id || reserva.id || reserva.reservaId;
+    id = Number(id);
+    if (!id || isNaN(id)) {
+      console.error('No se encontró un id de reserva válido en usuarioSeleccionado:', reserva);
+      return;
+    }
+    this.reservasService.actualizarEstadoReserva('reservas', id, 'Cancelada').subscribe({
+      next: () => {
+        console.log('Reserva cancelada correctamente');
+        localStorage.removeItem('usuarioSeleccionado');
+        localStorage.removeItem('reservaSeleccionada');
+        this.router.navigate(['/inicio']);
+      },
+      error: err => {
+        console.error('Error al cancelar la reserva:', err);
+      }
+    });
   }
 }

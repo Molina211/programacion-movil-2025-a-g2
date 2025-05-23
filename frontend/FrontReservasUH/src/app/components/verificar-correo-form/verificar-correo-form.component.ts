@@ -71,29 +71,19 @@ export class VerificarCorreoFormComponent  implements OnInit, AfterViewInit {
 puedeEnviarCodigo = true;
 
   verificarCodigo() {
-    this.loginService.codeValidation('verify-code', this.correo, this.codigo)
+  this.loginService.codeValidation('verify-code', this.correo, this.codigo)
     .subscribe({
       next: (res: any) => {
         console.log('Respuesta:', res);
         if (res.includes('Código verificado')) {
-          this.intentosFallidos = 0;
           this.router.navigate(['/inicio']);
-        } else {
-          this.intentosFallidos++;
-          if (this.intentosFallidos >= this.maxIntentos) {
-            this.router.navigate(['/interfaz-principal']);
-          }
         }
       },
       error: err => {
         console.error('Error al verificar código', err);
-        this.intentosFallidos++;
-        if (this.intentosFallidos >= this.maxIntentos) {
-          this.router.navigate(['/interfaz-principal']);
-        }
       }
     });
-  }
+}
   
   ngAfterViewInit(): void {
   const inputsArray = this.codeInputs.toArray();

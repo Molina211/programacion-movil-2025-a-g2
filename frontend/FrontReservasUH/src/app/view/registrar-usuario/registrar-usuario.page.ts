@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { RegistroFormComponent } from '../../components/registro-form/registro-form.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -14,9 +15,12 @@ import { RegistroFormComponent } from '../../components/registro-form/registro-f
 })
 export class RegistrarUsuarioPage implements OnInit {
 
-  ngOnInit() {
-  }
+  constructor(private location: Location) {}
+  
+    goBack(): void {
+      this.location.back();
+    }
 
-  constructor() { }
-
+    ngOnInit() {
+    }
 }

@@ -93,5 +93,17 @@ export const routes: Routes = [
   {
     path: 'registrar-empleado',
     loadComponent: () => import('./view/registrar-empleado/registrar-empleado.page').then( m => m.RegistrarEmpleadoPage)
+  },  {
+    path: 'perfil-admin',
+    loadComponent: () => import('./view/perfil-admin/perfil-admin.page').then( m => m.PerfilAdminPage)
   },
+  {
+    path: 'perfil-empleado',
+    loadComponent: () => import('./view/perfil-empleado/perfil-empleado.page').then( m => m.PerfilEmpleadoPage)
+  },
+  {
+    path: 'perfil-estudiante',
+    loadComponent: () => import('./view/perfil-estudiante/perfil-estudiante.page').then( m => m.PerfilEstudiantePage)
+  },
+
 ];

@@ -5,7 +5,7 @@
     </ion-label>
 
     <ion-item>
-      <ion-label>Primer nombre*:</ion-label>
+      <ion-label>Primer nombre<span class="asterisco">*</span>:</ion-label>
       <input name="primerNombre" [(ngModel)]="usuario1.primernombre" required #primerNombre="ngModel" type="text">
     </ion-item>
 
@@ -15,59 +15,57 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Primer Apellido*:</ion-label>
+      <ion-label>Primer Apellido<span class="asterisco">*</span>:</ion-label>
       <input name="primerApellido" [(ngModel)]="usuario1.primerapellido" required #primerApellido="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Segundo Apellido*:</ion-label>
+      <ion-label>Segundo Apellido<span class="asterisco">*</span>:</ion-label>
       <input name="segundoApellido" [(ngModel)]="usuario1.segundoapellido" required #segundoApellido="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Correo*:</ion-label>
+      <ion-label>Correo<span class="asterisco">*</span>:</ion-label>
       <input name="correo" [(ngModel)]="usuario1.correo" required email #correo="ngModel" type="email">
     </ion-item>
 
     <ion-item class="select-item">
-  <ion-label>Tipo documento*:</ion-label>
-  <select
-    name="tipoDocumento"
-    [(ngModel)]="usuario1.tipo_documento"
-    required
-    #tipoDocumento="ngModel">
-    <option value="" disabled selected>Seleccione tipo</option>
-    <option value="CC">CC</option>
-    <option value="TI">TI</option>
-    <option value="PAS">PAS</option>
-    <option value="CE">CE</option>
-  </select>
-</ion-item>
-
+      <ion-label>Tipo documento<span class="asterisco">*</span>:</ion-label>
+      <select
+        name="tipoDocumento"
+        [(ngModel)]="usuario1.tipo_documento"
+        required
+        #tipoDocumento="ngModel">
+        <option value="" disabled selected>Seleccione tipo</option>
+        <option value="CC">CC</option>
+        <option value="TI">TI</option>
+        <option value="PAS">PAS</option>
+        <option value="CE">CE</option>
+      </select>
+    </ion-item>
 
     <ion-item>
-      <ion-label>Numero documento*:</ion-label>
+      <ion-label>Numero documento<span class="asterisco">*</span>:</ion-label>
       <input name="numDocumento" [(ngModel)]="usuario1.num_documento" (ngModelChange)="actualizarCodigoEstudiantil($event)" required #codigoEstudiantil="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Contraseña*:</ion-label>
+      <ion-label>Contraseña<span class="asterisco">*</span>:</ion-label>
       <input name="contrasena" [(ngModel)]="usuario1.contrasena" required #contrasena="ngModel" type="password">
     </ion-item>
 
     <ion-item>
-      <ion-label>Confirmar contraseña*:</ion-label>
+      <ion-label>Confirmar contraseña<span class="asterisco">*</span>:</ion-label>
       <input type="password" name="confirmPassword" #confirmPassword required>
     </ion-item>
 
     <div class="buttons-container">
-      <ion-button
+      <button
         type="submit"
         class="btn btn-guardar"
-        [routerDirection]="'forward'"
         [disabled]="registerForm.invalid">
         Registrar
-      </ion-button>
+      </button>
     </div>
     
     <!-- Mensaje de error fuera del contenedor -->

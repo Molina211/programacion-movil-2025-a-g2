@@ -1,0 +1,21 @@
+<div class="estudiante-container">
+  <h2 class="titulo">Empleado</h2>
+  <div class="info-row">
+    <div class="info-col">
+      <div class="label">Nombre completo</div>
+      <div class="valor nombre-completo">{{ primernombre }} {{ segundonombre }} {{ primerapellido }} {{ segundoapellido }}</div>
+    </div>
+    <div class="info-col">
+      <div class="label">Correo</div>
+      <div class="valor correo">{{ correo }}</div>
+    </div>
+  </div>
+  <div class="codigo-estudiantil-row">
+    <div class="label">Numero documento</div>
+    <div class="valor codigo-estudiantil">{{ num_documento }}</div>
+  </div>
+  <div class="top-buttons">
+    <button (click)="editarReserva()" class="login-button">Editar perfil</button>
+    <button (click)="cerrarSesion()" class="login-button">Cerrar Sesión</button>
+  </div>
+</div>

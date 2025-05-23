@@ -50,7 +50,8 @@
         usuarios.</p>
 
       <div class="buttons-container">
-        <ion-button [routerLink]="['/inicio']" [routerDirection]="'forward'" class="login-button">Volver a pagina de inicio</ion-button>
+        <button *ngIf="Rol === 'ESTUDIANTE'" [routerLink]="['/inicio']" [routerDirection]="'forward'" class="login-button">Volver a página de inicio</button>
+        <button *ngIf="Rol === 'ADMINISTRADOR'" [routerLink]="['/inicio-empleado']" [routerDirection]="'forward'" class="login-button">Volver a página de inicio</button>
       </div>
     </div>
 

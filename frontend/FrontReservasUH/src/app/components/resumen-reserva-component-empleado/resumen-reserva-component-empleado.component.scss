@@ -33,7 +33,7 @@
   margin-left: 10px;
 }
 
-.buttons-container {
+.buttons-container1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,13 +42,71 @@
   gap: 10px;
 }
 
+.top-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
 /* Botones más pequeños para todos los roles */
-ion-button.login-button {
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+button.login-button {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
   text-transform: none;
+  border: none;
+  padding: 10px 24px;
+  min-width: 140px;
+  width: auto;
+  cursor: pointer;
+  transition: background 0.2s;
 }
+button.login-button:active {
+  background: #222;
+}
+
+.boton-container2 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 150px;
+}
+
+.boton-container2 .reservar-btn {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.boton-container2 .reservar-btn:active {
+  background: #222;
+}
+
+.bottom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+

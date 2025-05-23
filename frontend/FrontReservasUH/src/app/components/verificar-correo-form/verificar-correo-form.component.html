@@ -17,16 +17,16 @@
 </div>
 
   <div class="buttons-container">
-  <ion-button routerDirection="forward" (click)="verificarCodigo()" class="btn-primary">
+  <button routerDirection="forward" (click)="verificarCodigo()" class="btn-secondary">
     Activar
-  </ion-button>
-  <ion-button 
+  </button>
+  <button 
     class="btn-secondary" 
     (click)="enviarCodigo()" 
     fill="outline" 
     [disabled]="!puedeEnviarCodigo">
     Reenviar Código
-  </ion-button>
+  </button>
 </div>
 
 </div>
