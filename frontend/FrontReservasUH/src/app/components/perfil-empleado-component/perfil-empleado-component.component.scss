@@ -1,0 +1,113 @@
+.estudiante-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 24px 32px 24px;
+  font-family: 'League Spartan', sans-serif;
+  text-align: center;
+  margin-top: 170px;
+}
+
+.titulo {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: #191919;
+}
+
+.info-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 8px;
+}
+
+.info-col {
+  flex: 1 1 0;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #191919;
+  margin-bottom: 2px;
+}
+
+.valor {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5px;
+}
+
+.nombre-completo {
+  color: #01963f;
+  font-weight: 600;
+  font-size: 1.0rem;
+  line-height: 1.2;
+}
+
+.correo {
+  color: #2366b8;
+  font-size: 1.0rem;
+  word-break: break-all;
+}
+
+.codigo-estudiantil-row {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.codigo-estudiantil-row .label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #191919;
+  margin-bottom: 2px;
+}
+
+.codigo-estudiantil-row .codigo-estudiantil {
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: #191919;
+}
+
+@media (max-width: 600px) {
+  .info-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 285px;
+  gap: 10px;
+}
+
+/* Botones más pequeños para todos los roles */
+button.login-button {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: none;
+  border: none;
+  padding: 10px 24px;
+  min-width: 140px;
+  width: auto;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button.login-button:active {
+  background: #222;
+}
+

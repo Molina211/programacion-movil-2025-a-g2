@@ -80,17 +80,28 @@
 }
 
 /* Botones más pequeños para todos los roles */
-ion-button.login-button,
-ion-button.register-button,
-ion-button.admin-button,
-ion-button.estudiante-button {
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+button.login-button,
+button.register-button,
+button.admin-button,
+button.estudiante-button {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
   text-transform: none;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button.login-button:active,
+button.register-button:active,
+button.admin-button:active,
+button.estudiante-button:active {
+  background: #222;
 }
 
 .profile-container {

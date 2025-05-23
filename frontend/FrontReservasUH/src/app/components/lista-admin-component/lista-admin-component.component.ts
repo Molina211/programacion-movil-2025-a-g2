@@ -45,15 +45,16 @@ export class ListaAdminComponentComponent  implements OnInit {
 
   cargarEstudiantes() {
     if (this.Rol === 'ADMINISTRADOR') {
-      // Mostrar todos los estudiantes registrados
+      const storedId = localStorage.getItem('Id');
+      const idActual = storedId ? Number(storedId) : null;
       this.usuarioService.getAll('users').subscribe((usuarios: Usuario[]) => {
         this.duracion = usuarios
-          .filter(u => u.rol === 'ADMINISTRADOR')
+          .filter(u => u.rol === 'ADMINISTRADOR' && u.id !== idActual)
           .map(u => ({
             reservas: { usuario: u } as any // Solo para mostrar datos en la vista
           }) as Duracion);
       });
-    } 
+    }
   }
 
   get estudiantesFiltrados() {

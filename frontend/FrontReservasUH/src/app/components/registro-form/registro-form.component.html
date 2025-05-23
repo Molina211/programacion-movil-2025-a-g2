@@ -1,11 +1,11 @@
-<div class="form-wrapper" *ngIf="Rol === null">
+<div class="form-wrapper" *ngIf="Rol === null || Rol === 'ESTUDIANTE'">
   <form #registerForm="ngForm" (ngSubmit)="registrarse(registerForm)" novalidate>
     <ion-label class="ion-text-center">
       <h2>Registro</h2>
     </ion-label>
 
     <ion-item>
-      <ion-label>Primer nombre*:</ion-label>
+      <ion-label>Primer nombre<span class="asterisco">*</span>:</ion-label>
       <input name="primerNombre" [(ngModel)]="usuario1.primernombre" required #primerNombre="ngModel" type="text">
     </ion-item>
 
@@ -15,43 +15,47 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Primer Apellido*:</ion-label>
+      <ion-label>Primer apellido<span class="asterisco">*</span>:</ion-label>
       <input name="primerApellido" [(ngModel)]="usuario1.primerapellido" required #primerApellido="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Segundo Apellido*:</ion-label>
+      <ion-label>Segundo apellido<span class="asterisco">*</span>:</ion-label>
       <input name="segundoApellido" [(ngModel)]="usuario1.segundoapellido" required #segundoApellido="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Correo Institucional*:</ion-label>
+      <ion-label>Correo institucional<span class="asterisco">*</span>:</ion-label>
       <input name="correoInstitucional" [(ngModel)]="usuario1.correo" required email #correoInstitucional="ngModel" type="email">
     </ion-item>
 
     <ion-item>
-      <ion-label>Código estudiantil*:</ion-label>
-      <input name="codigoEstudiantil" [(ngModel)]="usuario1.codigo_estudiantil" (ngModelChange)="actualizarCodigoEstudiantil($event)" required #codigoEstudiantil="ngModel" type="text">
+      <ion-label>Código estudiantil<span class="asterisco">*</span>:</ion-label>
+      <input name="codigoEstudiantil" [(ngModel)]="usuario1.codigo_estudiantil" required #codigoEstudiantil="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Contraseña*:</ion-label>
+      <ion-label>Numero de documento<span class="asterisco">*</span>:</ion-label>
+      <input name="numDocumento" [(ngModel)]="usuario1.num_documento" required #numDocumento="ngModel" type="text">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña<span class="asterisco">*</span>:</ion-label>
       <input name="contrasena" [(ngModel)]="usuario1.contrasena" required #contrasena="ngModel" type="password">
     </ion-item>
 
     <ion-item>
-      <ion-label>Confirmar contraseña*:</ion-label>
+      <ion-label>Confirmar contraseña<span class="asterisco">*</span>:</ion-label>
       <input type="password" name="confirmPassword" #confirmPassword required>
     </ion-item>
 
     <div class="buttons-container">
-      <ion-button
+      <button
         type="submit"
         class="btn btn-guardar"
-        [routerDirection]="'forward'"
         [disabled]="registerForm.invalid">
         Registrar
-      </ion-button>
+      </button>
     </div>
     
     <!-- Mensaje de error fuera del contenedor -->
@@ -69,7 +73,7 @@
     </ion-label>
 
     <ion-item>
-      <ion-label>Primer nombre*:</ion-label>
+      <ion-label>Primer nombre<span class="asterisco">*</span>:</ion-label>
       <input name="primerNombre" [(ngModel)]="usuario1.primernombre" required #primerNombre="ngModel" type="text">
     </ion-item>
 
@@ -79,43 +83,42 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Primer Apellido*:</ion-label>
+      <ion-label>Primer Apellido<span class="asterisco">*</span>:</ion-label>
       <input name="primerApellido" [(ngModel)]="usuario1.primerapellido" required #primerApellido="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Segundo Apellido*:</ion-label>
+      <ion-label>Segundo Apellido<span class="asterisco">*</span>:</ion-label>
       <input name="segundoApellido" [(ngModel)]="usuario1.segundoapellido" required #segundoApellido="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Correo Institucional*:</ion-label>
+      <ion-label>Correo Institucional<span class="asterisco">*</span>:</ion-label>
       <input name="correoInstitucional" [(ngModel)]="usuario1.correo" required email #correoInstitucional="ngModel" type="email">
     </ion-item>
 
     <ion-item>
-      <ion-label>Código estudiantil*:</ion-label>
+      <ion-label>Código estudiantil<span class="asterisco">*</span>:</ion-label>
       <input name="codigoEstudiantil" [(ngModel)]="usuario1.codigo_estudiantil" (ngModelChange)="actualizarCodigoEstudiantil($event)" required #codigoEstudiantil="ngModel" type="text">
     </ion-item>
 
     <ion-item>
-      <ion-label>Contraseña*:</ion-label>
+      <ion-label>Contraseña<span class="asterisco">*</span>:</ion-label>
       <input name="contrasena" [(ngModel)]="usuario1.contrasena" required #contrasena="ngModel" type="password">
     </ion-item>
 
     <ion-item>
-      <ion-label>Confirmar contraseña*:</ion-label>
+      <ion-label>Confirmar contraseña<span class="asterisco">*</span>:</ion-label>
       <input type="password" name="confirmPassword" #confirmPassword required>
     </ion-item>
 
     <div class="buttons-container">
-      <ion-button
+      <button
         type="submit"
         class="btn btn-guardar"
-        [routerDirection]="'forward'"
         [disabled]="registerForm.invalid">
         Guardar
-      </ion-button>
+      </button>
     </div>
     
     <!-- Mensaje de error fuera del contenedor -->

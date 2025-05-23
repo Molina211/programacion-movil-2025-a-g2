@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Reservas } from 'src/app/service/reservas';
 import { ReservasService } from 'src/app/service/reservas.service';
-import { Salas } from 'src/app/service/salas';
 import { Duracion } from 'src/app/service/duracion';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -49,7 +48,12 @@ export class ListaReservasComponentComponent implements OnInit {
 
   cargarReservas() {
     this.reservaService.getAll('reservas').subscribe((reserva: Reservas[]) => {
-      this.reservas = reserva;
+      if (this.Rol === 'ESTUDIANTE' && this.Id !== null) {
+        // Solo mostrar reservas del estudiante actual
+        this.reservas = reserva.filter(r => r.usuario && r.usuario.id === this.Id);
+      } else {
+        this.reservas = reserva;
+      }
     });
 
     if (this.Rol === 'ADMINISTRADOR') {

@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiHost: 'http://localhost',
-  apiPort: '8090',
+  apiHost: 'https://172.20.10.2',
+  apiPort: '8443',
   apiPrefix: '/api'
 };

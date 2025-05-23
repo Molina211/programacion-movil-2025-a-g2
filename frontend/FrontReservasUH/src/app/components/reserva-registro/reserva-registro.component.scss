@@ -183,10 +183,10 @@ input[type="time"] {
 }
 
 /* Botón Guardar */
-ion-button.btn-guardar {
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+.buttons-container button.btn-guardar {
+  background: #000;
+  color: #fff;
+  border-radius: 16px;
   font-weight: 500;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
@@ -196,16 +196,17 @@ ion-button.btn-guardar {
   margin-bottom: 0;
   transition: opacity 0.3s ease, transform 0.2s ease;
   text-transform: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
 }
 
-/* Hover activo (solo si no está deshabilitado) */
-ion-button.btn-guardar:hover:not(:disabled) {
-  transform: scale(1.02);
+.buttons-container button.btn-guardar:hover:not(:disabled) {
   opacity: 0.9;
+  transform: scale(1.02);
 }
 
-/* Estado deshabilitado */
-ion-button.btn-guardar:disabled {
+.buttons-container button.btn-guardar:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;

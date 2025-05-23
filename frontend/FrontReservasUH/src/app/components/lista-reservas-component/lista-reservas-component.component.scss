@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 160px;
+  margin-top: 110px;
 }
 
 .titulo {
@@ -54,8 +54,8 @@
 
 /* Estados */
 .estado-Reservada {
-  background-color: #c8e6c9;
-  color: #388e3c;
+  background-color: #dcc8e6;
+  color: #8124b3;
 }
 
 .estado-cancelada {
@@ -175,6 +175,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-bottom: 200px;
 }
 
 .buttons-container {
@@ -186,12 +187,20 @@
 }
 
 /* Botones más pequeños para todos los roles */
-ion-button.login-button {
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+button.login-button {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
   text-transform: none;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button.login-button:active {
+  background: #222;
 }

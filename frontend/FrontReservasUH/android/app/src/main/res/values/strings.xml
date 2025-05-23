@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ReservasUH - Salas Reservas</string>
+    <string name="title_activity_main">ReservasUH - Salas Reservas</string>
+    <string name="package_name">com.personal.reservasuh</string>
+    <string name="custom_url_scheme">com.personal.reservasuh</string>
+</resources>

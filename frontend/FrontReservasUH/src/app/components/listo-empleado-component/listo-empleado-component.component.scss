@@ -116,12 +116,28 @@
   margin-bottom: 120px;
 }
 
-ion-button.boton-registrar{
-  --background: #000000;
-  --color: white;
-  --border-radius: 6px;
+button.boton-registrar {
+  background: #000000;
+  color: white;
+  border-radius: 6px;
   font-weight: 400;
   font-size: 16px;
   font-family: 'League Spartan', sans-serif;
   text-transform: none;
+  border: none;
+  padding: 10px 24px;
+  min-width: 160px;
+  width: auto;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button.boton-registrar:active {
+  background: #222;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 40px;
 }

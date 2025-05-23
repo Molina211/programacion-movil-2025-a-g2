@@ -6,8 +6,6 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
-// Importa tu servicio y modelo Usuario aquí
-
 @Component({
   selector: 'app-registro-form',
   standalone: true,

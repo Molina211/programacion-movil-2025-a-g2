@@ -12,10 +12,15 @@ import { RouterLink } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule, RouterLink]
 })
 export class ConfirmarReservaPage implements OnInit {
+  Rol: string | null = null;
 
   constructor() { }
 
   ngOnInit() {
+    const storedRol = localStorage.getItem('Rol');
+    if (storedRol) {
+      this.Rol = storedRol;
+    }
   }
 
 }
